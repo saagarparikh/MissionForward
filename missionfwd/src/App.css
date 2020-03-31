@@ -64,11 +64,7 @@
   flex-direction: column;
   padding: 20px 20px;
   border-radius: 10px;
-  background-color: #ffffff;
   margin: auto;
-  border-color: #71B280;
-  border-width: 10px;
-  border-style: solid;
   font-family: 'Lato', sans-serif;
   margin-bottom: 1em;
 }
@@ -88,9 +84,11 @@
   margin-top: 1em;
   padding: 8px 0px;
   font-size: 1em;
-  font-weight: lighter;
+  font-weight: 8px;
   letter-spacing: 1px;
   margin-bottom: 0.25em;
+  font-size: 16px;
+  textDecoration: "none"
 }
 
 .createAccount {

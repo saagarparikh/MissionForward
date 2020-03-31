@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Cell} from 'react-mdl';
-
+import { Link, withRouter } from 'react-router-dom'
 class LandingPage extends Component{
   render() {
     return(
@@ -17,63 +17,14 @@ class LandingPage extends Component{
                 additional updates, please leave your name and email below.
               </p>
 
-              <div className = "wrapper">
               <div className = "form-wrapper">
-                <h1>Sign Up</h1>
-
-                <form onSubmit = {this.handleSubmit} noValidate>
-                  <div className="firstName">
-                    <label htmlFor="firstName">First Name</label>
-                    <input
-                      placeholder="First Name"
-                      type="text"
-                      name="firstName"
-                      noValidate
-                      onChange={this.handleChange}
-                    />
-                  </div>
-
-                  <div className="lastName">
-                    <label htmlFor="lastName">Last Name</label>
-                    <input
-                      placeholder="Last Name"
-                      type="text"
-                      name="lastName"
-                      noValidate
-                      onChange={this.handleChange}
-                    />
-                  </div>
-
-                  <div className="email">
-                    <label htmlFor="email">Email</label>
-                    <input
-                      placeholder="Email"
-                      type="email"
-                      name="email"
-                      noValidate
-                      onChange={this.handleChange}
-                    />
-                  </div>
-
-                  <div className="highschool">
-                    <label htmlFor="highschool">High School</label>
-                    <input
-                      placeholder="Highschool"
-                      type="text"
-                      name="highschool"
-                      noValidate
-                      onChange={this.handleChange}
-                    />
-                  </div>
-
                   <div className="createAccount">
-                    <button type="submit">Create Account</button>
-                    <small>Already Have an Account?</small>
+                    <Link to="/register" className="createAccount">
+                        <button className = "createAccountButton">
+                             Get Started!
+                        </button>
+                    </Link>
                   </div>
-                </form>
-
-
-              </div>
               </div>
 
             </div>
