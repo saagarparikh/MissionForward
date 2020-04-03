@@ -16,13 +16,16 @@
 }
 .cards{
   display: flex;
-  margin-top: 350px;
+  margin-top: 250px;
+  overflow: auto;
+  position: relative;
+  width: 100%;
+  align-content: space-between;
 }
 
 .card-text{
   color: black !important;
-  font-weight: bold !important;
-  font-size: 15px !important;
+  font-size: 1em !important;
   font-family: 'Nunito', sans-serif;
 }
 .register{
@@ -39,12 +42,12 @@
 }
 .about-body-text{
   left: 0;
-  width: 50%;
+  width: 75%;
   height: 100%;
   text-align: left;
   font-family: 'Nunito', sans-serif;
   color: black;
-  margin: auto
+  margin: auto;
 }
 
 .about-body-text h1{
@@ -104,8 +107,7 @@
   justify-content: space-between;
 }
 
-.banner-text h1{
-  font-size: 56px;
+.banner-text h2{
   font-weight: bold;
   color: black;
   font-family: 'Nunito', sans-serif;
@@ -117,8 +119,7 @@
   margin: auto;
 }
 
-.banner-text h4{
-  font-size: 25px;
+.banner-text h5{
   width: 75%;
   padding: 1em;
   font-family: 'Nunito', sans-serif;

@@ -9,14 +9,14 @@ class LandingPage extends Component{
         <Grid className = "landing-grid">
           <Cell col={5}>
             <div className="banner-text">
-              <h1>Welcome to Mission Forward</h1>
+              <h2>Welcome to Mission Forward</h2>
               <hr/>
-              <h4>
+              <h5>
                 Hi there! Our mission is to build products and services that will help soon-to-be college students navigate their personal and professional lives post high school.
                 <h2> </h2>
                 We are starting with a tool to help current high school seniors learn more about what it's like to attend popular colleges from MSJ alumni. To acess this tool and for
                 additional updates, please leave your name and email below.
-              </h4>
+              </h5>
               <Register className = "register"></Register>
 
             </div>
@@ -24,8 +24,8 @@ class LandingPage extends Component{
 
           <Cell col={7}>
             <div className = "cards">
-              <Card shadow={5} style={{minWidth: '450', margin: 'auto', marginTop: '45x'}}>
-                <CardTitle style={{color: '#fff', height: '320px', background: 'url(https://cdn3.iconfinder.com/data/icons/award-gray-set-1/100/award-09-512.png) center / cover'}} ></CardTitle>
+              <Card style={{minWidth: '450', margin: 'auto', marginTop: '45x'}}>
+                <CardTitle style={{color: '#fff', height: '250px', background: 'url(https://cdn3.iconfinder.com/data/icons/award-gray-set-1/100/award-09-512.png) center / cover'}} ></CardTitle>
                 <CardText className = "card-text">
                   100+ MSJ Class of 2016 College Alumni
                 </CardText>
@@ -34,8 +34,8 @@ class LandingPage extends Component{
                 </CardMenu>
               </Card>
 
-              <Card shadow={5} style={{minWidth: '450', margin: 'auto', marginTop: '45x'}}>
-                <CardTitle style={{color: '#fff', height: '320px', background: 'url(https://www.shareicon.net/data/512x512/2016/08/04/806673_school_512x512.png) center / cover'}} ></CardTitle>
+              <Card  style={{minWidth: '450', margin: 'auto', marginTop: '45x'}}>
+                <CardTitle style={{color: '#fff', height: '250px', background: 'url(https://www.shareicon.net/data/512x512/2016/08/04/806673_school_512x512.png) center / cover'}} ></CardTitle>
                 <CardText className = "card-text">
                   20+ Supported Universities
                 </CardText>
@@ -44,8 +44,8 @@ class LandingPage extends Component{
                 </CardMenu>
               </Card>
 
-              <Card shadow={5} style={{minWidth: '450', margin: 'auto', marginTop: '45x'}}>
-                <CardTitle style={{color: '#fff', height: '320px', background: 'url(https://gopublicschoolswcc.org/wp-content/uploads/2017/01/about-the-data-icon.png) center / cover'}} ></CardTitle>
+              <Card  style={{minWidth: '450', margin: 'auto', marginTop: '45x'}}>
+                <CardTitle style={{color: '#fff', height: '250px', background: 'url(https://gopublicschoolswcc.org/wp-content/uploads/2017/01/about-the-data-icon.png) center / cover'}} ></CardTitle>
                 <CardText className = "card-text">
                   Learn from first-hand college experiences
                 </CardText>
