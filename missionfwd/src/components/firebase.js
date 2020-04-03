@@ -30,7 +30,6 @@ class Firebase {
 		if(!this.auth.currentUser) {
 			return alert('Not authorized')
 		}
-
 		return this.db.doc(`highschools/${this.auth.currentUser.uid}`).set({
 			highschool
 		})
@@ -44,11 +43,6 @@ class Firebase {
 
 	getCurrentUsername() {
 		return this.auth.currentUser && this.auth.currentUser.displayName
-	}
-
-	async getCurrentUserQuote() {
-		const quote = await this.db.doc(`highschools/${this.auth.currentUser.uid}`).get()
-		return quote.get('quote')
 	}
 }
 

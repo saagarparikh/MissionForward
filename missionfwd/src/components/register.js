@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Typography, Paper, Avatar, Button, FormControl, Input, InputLabel } from '@material-ui/core'
+import { Typography, Paper,Button, FormControl, Input, InputLabel } from '@material-ui/core'
 import withStyles from '@material-ui/core/styles/withStyles'
 import { Link, withRouter } from 'react-router-dom'
 import firebase from './firebase'
@@ -22,16 +22,16 @@ const styles = theme => ({
 		alignItems: 'center',
 		padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
 	},
-	avatar: {
-		margin: theme.spacing.unit,
-		backgroundColor: theme.palette.secondary.main,
-	},
 	form: {
 		width: '100%', // Fix IE 11 issue.
 		marginTop: theme.spacing.unit,
 	},
 	submit: {
 		marginTop: theme.spacing.unit * 3,
+	},
+
+	title: {
+		padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
 	},
 })
 
@@ -44,11 +44,8 @@ function Register(props) {
 	const [highschool, setHighschool] = useState('')
 
 	return (
-		<main className={classes.main}>
-			<Paper className={classes.paper}>
-				<Typography component="h1" variant="h5">
-					Register Account
-       			</Typography>
+		<main className= {classes.main}>
+			<Paper className="register">
 				<form className={classes.form} onSubmit={e => e.preventDefault() && false }>
 					<FormControl margin="normal" required fullWidth>
 						<InputLabel htmlFor="name">Name</InputLabel>
@@ -63,7 +60,7 @@ function Register(props) {
 						<Input name="password" type="password" id="password" autoComplete="off" value={password} onChange={e => setPassword(e.target.value)}  />
 					</FormControl>
 					<FormControl margin="normal" required fullWidth>
-						<InputLabel htmlFor="highschool">Highschool</InputLabel>
+						<InputLabel htmlFor="highschool">High School</InputLabel>
 						<Input name="highschool" type="text" id="highschool" autoComplete="off" value={highschool} onChange={e => setHighschool(e.target.value)}  />
 					</FormControl>
 
@@ -85,7 +82,7 @@ function Register(props) {
 		try {
 			await firebase.register(name, email, password)
 			await firebase.addHighschool(highschool)
-			props.history.replace('/')
+			props.history.replace('/confirmation')
 		} catch(error) {
 			alert(error.message)
 		}

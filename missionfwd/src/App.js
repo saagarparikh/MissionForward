@@ -10,17 +10,19 @@ function App() {
         <Layout>
             <Header className="header-color" title="Mission Forward" scroll>
                 <Navigation>
+                    <Link to="/">Home</Link>
+                </Navigation>
+                <Navigation>
                     <Link to="/about">About</Link>
-                    <Link to="/contact">Contact</Link>
-                    <Link to="/register">Schools</Link>
                 </Navigation>
             </Header>
-            <Drawer title="Title">
-                <Navigation>
+            <Drawer title="Mission Forward">
+              <Navigation>
+                  <Link to="/">Home</Link>
+              </Navigation>
+              <Navigation>
                   <Link to="/about">About</Link>
-                  <Link to="/contact">Contact</Link>
-                  <Link to="/register">Schools</Link>
-                </Navigation>
+              </Navigation>
             </Drawer>
             <Content>
                 <div className="page-content"/>
