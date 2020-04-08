@@ -48,7 +48,6 @@ class Firebase {
 	}
 
   addCollegeAlumData(school, name, major, minor, email, grad, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9) {
-    alert(school)
     this.db.collection(school).add({
       university: school,
       name: name,
@@ -70,9 +69,6 @@ class Firebase {
 	}
 
   writeUserData(school, name, major, minor, email, grad, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9) {
-    if(!this.auth.currentUser) {
-      return alert('Not authorized')
-    }
     var schools = this.database.ref("/" + school).push()
     schools.set({
       university: school,
