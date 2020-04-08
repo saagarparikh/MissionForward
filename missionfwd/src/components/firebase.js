@@ -1,7 +1,7 @@
 import app from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
-import 'firebase/database'
+import firebase from 'firebase'
 
 const firebaseConfig = {
   apiKey: "AIzaSyD7Es3RRgmwxz-h0ipeB0do95ZbpJQXGho",
@@ -16,10 +16,11 @@ const firebaseConfig = {
 
 class Firebase {
 	constructor() {
-		app.initializeApp(firebaseConfig)
+    firebase.initializeApp(firebaseConfig);
+		//app.initializeApp(firebaseConfig)
 		this.auth = app.auth()
 		this.db = app.firestore()
-    this.database = app.database()
+    this.database = firebase.database();
 	}
 
   async register(name, email, password) {
@@ -31,7 +32,6 @@ class Firebase {
 
   async anonymous_register(){
     return this.auth.signInAnonymously().catch(function(error) {
-      var errorCode = error.code;
       var errorMessage = error.message;
       alert(errorMessage);
     });
@@ -39,7 +39,8 @@ class Firebase {
 
 	addHighschool(highschool) {
 		if(!this.auth.currentUser) {
-			return alert('Not authorized')
+			alert('Not authorized')
+      return
 		}
 		return this.db.doc(`highschools/${this.auth.currentUser.uid}`).set({
 			highschool
@@ -47,6 +48,7 @@ class Firebase {
 	}
 
   addCollegeAlumData(school, name, major, minor, email, grad, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9) {
+    alert(school)
     this.db.collection(school).add({
       university: school,
       name: name,
@@ -67,14 +69,28 @@ class Firebase {
     })
 	}
 
-  writeUserData(userId, name, email, imageUrl) {
+  writeUserData(school, name, major, minor, email, grad, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9) {
     if(!this.auth.currentUser) {
       return alert('Not authorized')
     }
-    app.database().ref(`UCI/${this.auth.currentUser.uid}`).set({
-      username: name,
+    var schools = this.database.ref("/" + school).push()
+    schools.set({
+      university: school,
+      name: name,
+      major: major,
+      minor: minor,
       email: email,
-      profile_picture : imageUrl
+      grad: grad,
+      q0: q0,
+      q1: q1,
+      q2: q2,
+      q3: q3,
+      q4: q4,
+      q5: q5,
+      q6: q6,
+      q7: q7,
+      q8: q8,
+      q9: q9
     });
 }
 

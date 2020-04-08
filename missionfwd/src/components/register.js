@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Typography, Paper,Button, FormControl, Input, InputLabel } from '@material-ui/core'
+import {Paper,Button, FormControl, Input, InputLabel } from '@material-ui/core'
 import withStyles from '@material-ui/core/styles/withStyles'
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import firebase from './firebase'
 const styles = theme => ({
 	main: {

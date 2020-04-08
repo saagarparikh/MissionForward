@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom'
 import Register from './register';
-import { Tabs, Tab, Grid, Cell, Card, CardTitle, CardText, CardActions, Button, CardMenu, IconButton } from 'react-mdl';
+import { Grid, Cell, Card, CardTitle, CardText, CardMenu, IconButton } from 'react-mdl';
 class LandingPage extends Component{
   render() {
     return(

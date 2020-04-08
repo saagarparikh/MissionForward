@@ -1,17 +1,11 @@
-import { Component } from 'react';
 import React, { useState } from 'react'
-import ReactDOM from 'react-dom';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import Dropdown from 'react-bootstrap/Dropdown';
-import InputGroup from 'react-bootstrap/InputGroup';
 import firebase from './firebase';
-import { Alert } from 'react-alert'
-import { PureComponent, Fragment } from 'react';
+import onRegister from './register'
 
 function Alumni(props) {
-  const { classes } = props
   const [validated, setValidated] = useState(false);
   const [name, setName] = useState('')
   const [school, setSchool] = useState('')
@@ -29,7 +23,6 @@ function Alumni(props) {
   const [q7, setQ7] = useState('')
   const [q8, setQ8] = useState('')
   const [q9, setQ9] = useState('')
-  const [q10, setQ10] = useState('')
   const colleges = require("./csvjson-3.json")
 
   const handleSubmit = (event) => {
@@ -40,13 +33,9 @@ function Alumni(props) {
       event.preventDefault();
       event.stopPropagation();
     }else{
-      onRegister(school, name, major, minor, email, grad, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9)
+      onRegisterAlum(school, name, major, minor, email, grad, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9)
       props.history.replace('/alum-confirm')
     }
-  };
-
-  const handleChange = (e) => {
-    school = e.target.value;
   };
 
   return (
@@ -64,7 +53,7 @@ function Alumni(props) {
             <Form.Label >Select University*</Form.Label>
             <Form.Control as="select" required custom name = "school" onChange={e => setSchool(e.target.value)}>
               {colleges.map(item => (
-                <option value={item.Institution}>
+                <option key={item.Institution} value={item.Institution}>
                   {item.Institution}
                 </option>
               ))}
@@ -169,7 +158,7 @@ function Alumni(props) {
         <h3>General Questions</h3>
         <Form.Group controlId="q6">
           <Form.Label>What was the hardest, or worst, aspect of going to your school? *</Form.Label>
-          <Form.Control as="textarea" rows="3" required placeholder= "Enter text" required name = "q6" onChange={e => setQ6(e.target.value)}/>
+          <Form.Control as="textarea" rows="3" required placeholder= "Enter text" name = "q6" onChange={e => setQ6(e.target.value)}/>
         </Form.Group>
 
         <Form.Group controlId="q7">
@@ -193,10 +182,10 @@ function Alumni(props) {
   );
 }
 
-async function onRegister(school, name, major, minor, email, grad, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9) {
+async function onRegisterAlum(school, name, major, minor, email, grad, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9) {
   try {
-    await firebase.register(name, email, "password")
-    await firebase.addCollegeAlumData(school, name, major, minor, email, grad, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9)
+    firebase.anonymous_register()
+    firebase.writeUserData(school, name, major, minor, email, grad, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9)
   } catch(error) {
     alert(error.message)
   }

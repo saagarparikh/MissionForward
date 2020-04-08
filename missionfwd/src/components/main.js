@@ -15,7 +15,6 @@ const Main = () => (
     <Route exact path = "/" component={LandingPage}/>
     <Route path = "/about" component={About}/>
     <Route path = "/contact" component={Contact}/>
-    <Route path = "/register" component={Register}/>
     <Route path = "/confirmation" component={Confirmation}/>
     <Route path = "/schoolpage" component={SchoolPage}/>
     <Route path = "/alumni" component={Alumni}/>
