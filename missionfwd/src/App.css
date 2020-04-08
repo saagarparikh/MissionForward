@@ -1,3 +1,26 @@
+.alum-form-header h1{
+  font-family: 'Nunito', sans-serif;
+}
+
+.alum-form-header p{
+  font-family: 'Nunito', sans-serif;
+}
+
+.alum-form h3{
+  font-family: 'Nunito', sans-serif;
+}
+
+
+.alum-form{
+  width: 50%;
+  margin: auto;
+}
+
+.alum-form-header{
+  width: 55%;
+  margin: auto;
+}
+
 .tab-text{
   color: black !important;
   font-size: 25px !important;

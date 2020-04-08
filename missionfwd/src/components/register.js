@@ -78,7 +78,7 @@ function Register(props) {
 		</main>
 	)
 
-  async function onRegister() {
+  async function onRegister(name, school, email, major, minor, grad, q0, q1, q2, q3, q4, q5, q6, q7, q10, q11) {
 		try {
 			await firebase.register(name, email, password)
 			await firebase.addHighschool(highschool)

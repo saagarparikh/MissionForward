@@ -6,6 +6,8 @@ import Register from './register';
 import Contact from './contact';
 import Confirmation from './confirmation'
 import SchoolPage from './schoolPage'
+import Alumni from './alumni'
+import AlumConfirmation from './alum-confirm'
 
 
 const Main = () => (
@@ -16,6 +18,8 @@ const Main = () => (
     <Route path = "/register" component={Register}/>
     <Route path = "/confirmation" component={Confirmation}/>
     <Route path = "/schoolpage" component={SchoolPage}/>
+    <Route path = "/alumni" component={Alumni}/>
+    <Route path = "/alum-confirm" component={AlumConfirmation}/>
   </Switch>
 )
 

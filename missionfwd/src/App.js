@@ -4,6 +4,7 @@ import {Layout, Header, Navigation, Drawer, Content} from 'react-mdl'
 import Main from './components/main'
 import { Link } from 'react-router-dom';
 import HttpsRedirect from 'react-https-redirect'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
                 <Navigation>
                     <Link to="/about">About</Link>
                 </Navigation>
+                <Navigation>
+                    <Link to="/alumni">Alumni</Link>
+                </Navigation>
             </Header>
             <Drawer title="Mission Forward">
               <Navigation>
@@ -24,6 +28,9 @@ function App() {
               </Navigation>
               <Navigation>
                   <Link to="/about">About</Link>
+              </Navigation>
+              <Navigation>
+                  <Link to="/alumni">Alumni</Link>
               </Navigation>
             </Drawer>
             <Content>
