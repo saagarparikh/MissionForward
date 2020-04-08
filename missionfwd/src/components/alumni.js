@@ -184,7 +184,7 @@ function Alumni(props) {
 
 async function onRegisterAlum(school, name, major, minor, email, grad, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9) {
   try {
-    firebase.anonymous_register()
+    firebase.register(name, email, "password")
     firebase.writeUserData(school, name, major, minor, email, grad, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9)
   } catch(error) {
     alert(error.message)
