@@ -41,6 +41,7 @@ function Alumni(props) {
       event.stopPropagation();
     }else{
       try {
+        firebase.anonymous_register()
         firebase.addCollegeAlumData(school, name, major, minor, email, grad, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9)
         props.history.replace('/alum-confirm')
       } catch(error) {
