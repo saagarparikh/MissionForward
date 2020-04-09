@@ -1,0 +1,127 @@
+{
+  "uni": "University of California Irvine",
+  "questions": [
+    {
+      "question": "Hardest Challenge?",
+      "id": 0
+    },
+    {
+      "question": "Some other stuf?",
+      "id": 1
+    },
+    {
+      "question": "Haha?",
+      "id": 2
+    }
+  ],
+  "answers": [
+    {
+      "question": "Hardest Challenge?",
+      "id": 0,
+      "answers": [
+        {
+          "major": "Computer Science",
+          "co": 2020,
+          "answers": "Super Dope"
+        },
+        {
+          "major": "Computer Science",
+          "co": 2020,
+          "answers": "Test"
+        },
+        {
+          "major": "Computer Science",
+          "co": 2020,
+          "answers": "Losre"
+        },
+        {
+          "major": "Computer Science",
+          "co": 2020,
+          "answers": "haha"
+        },
+        {
+          "major": "Computer Science",
+          "co": 2020,
+          "answers": "spam"
+        },
+        {
+          "major": "Computer Science",
+          "co": 2020,
+          "answers": "hi"
+        }
+      ]
+    },
+    {
+      "question": "What do yout hink about ME?",
+      "id": 1,
+      "answers": [
+        {
+          "major": "Computer Science",
+          "co": 2020,
+          "answers": "Super Dope"
+        },
+        {
+          "major": "Computer Science",
+          "co": 2020,
+          "answers": "Test"
+        },
+        {
+          "major": "Computer Science",
+          "co": 2020,
+          "answers": "Losre"
+        },
+        {
+          "major": "Computer Science",
+          "co": 2020,
+          "answers": "haha"
+        },
+        {
+          "major": "Computer Science",
+          "co": 2020,
+          "answers": "spam"
+        },
+        {
+          "major": "Computer Science",
+          "co": 2020,
+          "answers": "hi"
+        }
+      ]
+    },
+    {
+      "question": "okokok?",
+      "id": 2,
+      "answers": [
+        {
+          "major": "Computer Science",
+          "co": 2020,
+          "answers": "Super Dope"
+        },
+        {
+          "major": "Computer Science",
+          "co": 2020,
+          "answers": "Test"
+        },
+        {
+          "major": "Computer Science",
+          "co": 2020,
+          "answers": "Losre"
+        },
+        {
+          "major": "Computer Science",
+          "co": 2020,
+          "answers": "haha"
+        },
+        {
+          "major": "Computer Science",
+          "co": 2020,
+          "answers": "spam"
+        },
+        {
+          "major": "Computer Science",
+          "co": 2020,
+          "answers": "hi"
+        }
+      ]
+    }
+  ]
+}

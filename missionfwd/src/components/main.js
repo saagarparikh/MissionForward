@@ -6,7 +6,7 @@ import Register from './register';
 import Contact from './contact';
 import Confirmation from './confirmation'
 import SchoolPage from './schoolPage'
-
+import SchoolList from './schoolList'
 
 const Main = () => (
   <Switch>
@@ -15,7 +15,9 @@ const Main = () => (
     <Route path = "/contact" component={Contact}/>
     <Route path = "/register" component={Register}/>
     <Route path = "/confirmation" component={Confirmation}/>
-    <Route path = "/schoolpage" component={SchoolPage}/>
+    <Route path = "/SchoolList/:school" component={SchoolPage}/>
+    <Route path = "/SchoolList" component={SchoolList}/>
+    
   </Switch>
 )
 
