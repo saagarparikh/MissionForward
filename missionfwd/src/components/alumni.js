@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import firebase from './firebase';
-import onRegister from './register'
+import axios from 'axios';
 
 function Alumni(props) {
   const [validated, setValidated] = useState(false);
@@ -33,7 +33,30 @@ function Alumni(props) {
       event.preventDefault();
       event.stopPropagation();
     }else{
-      onRegisterAlum(school, name, major, minor, email, grad, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9)
+      //onRegisterAlum(school, name, major, minor, email, grad, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9)
+
+      const alumniData = {
+        school: school,
+        name: name,
+        email: email,
+        major: major,
+        minor: minor,
+        grad: grad,
+        q0: q0,
+        q1: q1,
+        q2: q2,
+        q3: q3,
+        q4: q4,
+        q5: q5,
+        q6: q6,
+        q7: q7,
+        q8: q8,
+        q9: q9
+      }
+
+      axios.post('http://localhost:5000/alumni-data/add', alumniData)
+        .then(res => console.log(res.data));
+
       props.history.replace('/alum-confirm')
     }
   };
