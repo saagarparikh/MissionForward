@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom'
 import Register from './register';
-import { Tabs, Tab, Grid, Cell, Card, CardTitle, CardText, CardActions, Button, CardMenu, IconButton } from 'react-mdl';
-
+import { Grid, Cell, Card, CardTitle, CardText, CardMenu, IconButton } from 'react-mdl';
 class LandingPage extends Component{
   render() {
     return(
@@ -26,7 +24,7 @@ class LandingPage extends Component{
           <Cell col={7}>
             <div className = "cards">
               <Card style={{minWidth: '450', margin: 'auto', marginTop: '45x'}}>
-                <CardTitle style={{color: '#fff', height: '250px', background: 'url(https://cdn3.iconfinder.com/data/icons/award-gray-set-1/100/award-09-512.png) center / cover'}} ></CardTitle>
+                <CardTitle style={{color: '#fff', height: '275px', background: 'url(https://cdn3.iconfinder.com/data/icons/award-gray-set-1/100/award-09-512.png) center / cover'}} ></CardTitle>
                 <CardText className = "card-text">
                   100+ MSJ Class of 2016 College Alumni
                 </CardText>
@@ -36,7 +34,7 @@ class LandingPage extends Component{
               </Card>
 
               <Card  style={{minWidth: '450', margin: 'auto', marginTop: '45x'}}>
-                <CardTitle style={{color: '#fff', height: '250px', background: 'url(https://www.shareicon.net/data/512x512/2016/08/04/806673_school_512x512.png) center / cover'}} ></CardTitle>
+                <CardTitle style={{color: '#fff', height: '275px', background: 'url(https://www.shareicon.net/data/512x512/2016/08/04/806673_school_512x512.png) center / cover'}} ></CardTitle>
                 <CardText className = "card-text">
                   20+ Supported Universities
                 </CardText>
@@ -46,7 +44,7 @@ class LandingPage extends Component{
               </Card>
 
               <Card  style={{minWidth: '450', margin: 'auto', marginTop: '45x'}}>
-                <CardTitle style={{color: '#fff', height: '250px', background: 'url(https://gopublicschoolswcc.org/wp-content/uploads/2017/01/about-the-data-icon.png) center / cover'}} ></CardTitle>
+                <CardTitle style={{color: '#fff', height: '275px', background: 'url(https://gopublicschoolswcc.org/wp-content/uploads/2017/01/about-the-data-icon.png) center / cover'}} ></CardTitle>
                 <CardText className = "card-text">
                   Learn from first-hand college experiences
                 </CardText>

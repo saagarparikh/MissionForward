@@ -4,9 +4,11 @@ import {Layout, Header, Navigation, Drawer, Content} from 'react-mdl'
 import Main from './components/main'
 import { Link } from 'react-router-dom';
 import {Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
+import HttpsRedirect from 'react-https-redirect';
 
 function App() {
   return (
+    <HttpsRedirect>
     <div>
       <Navbar variant="light" expand="lg" fixed="top">
         <Navbar.Brand href="/">Mission Forward</Navbar.Brand>
@@ -18,7 +20,7 @@ function App() {
 
           </Nav>
           <Nav>
-            <Nav.Link href="#">Alumni</Nav.Link>
+            <Nav.Link href="/alumni">Alumni</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>
             <Nav.Link href="#">Contact</Nav.Link>
           </Nav>
@@ -29,26 +31,7 @@ function App() {
         <Main/>
       </div>
     </div>
-
-    // <div className="demo-big-content">
-    //     <Layout>
-    //         <Header className="header-color" title={<Link to="/">Mission Forward</Link>} scroll>
-    //             <Navigation>
-    //                 <Link to="/about">About</Link>
-    //             </Navigation>
-    //         </Header>
-    //         <Drawer title="Mission Forward">
-    //           <Navigation>
-    //               <Link to="/about">About</Link>
-    //           </Navigation>
-    //         </Drawer>
-    //         <Content>
-    //             <div className="page-content"/>
-    //             <Main/>
-    //         </Content>
-    //     </Layout>
-    // </div>
-
+    </HttpsRedirect>
   );
 }
 
