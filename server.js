@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
-const cors = require("cors");
 
 require('dotenv').config();
 
@@ -22,7 +21,6 @@ connection.once('open', () => {
 
 const alumniDataRouter = require('./routes/alumdata');
 
-app.use(cors());
 app.use('/alumni-data', alumniDataRouter);
 
 if(process.env.NODE_ENV === 'production'){
