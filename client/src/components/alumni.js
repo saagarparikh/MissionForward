@@ -8,11 +8,12 @@ import axios from 'axios';
 function Alumni(props) {
   const [validated, setValidated] = useState(false);
   const [name, setName] = useState('')
-  const [school, setSchool] = useState('')
+  const [school, setSchool] = useState('Select University')
   const [email, setEmail] = useState('')
   const [major, setMajor] = useState('')
   const [minor, setMinor] = useState('')
   const [grad, setGrad] = useState('')
+  const [anon, setAnon] = useState('Yes')
   const [q0, setQ0] = useState('')
   const [q1, setQ1] = useState('')
   const [q2, setQ2] = useState('')
@@ -33,7 +34,6 @@ function Alumni(props) {
       event.preventDefault();
       event.stopPropagation();
     }else{
-      //onRegisterAlum(school, name, major, minor, email, grad, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9)
 
       const alumniData = {
         school: school,
@@ -42,6 +42,7 @@ function Alumni(props) {
         major: major,
         minor: minor,
         grad: grad,
+        anon: anon,
         q0: q0,
         q1: q1,
         q2: q2,
@@ -65,7 +66,7 @@ function Alumni(props) {
     <div>
       <div className = "alum-form-header">
         <h1>College/University Alumni Survey</h1>
-        <p>These responses will anonymously (unless you authorize otherwise) shared publicly, with the intent to help current MSJ seniors make their decisions on where to attend school. Please answer them with the undergraduate institution you will be graduating from in mind.</p>
+        <p>These responses will ANONYMOUSLY (unless you note otherwise) be shared publicly, with the intent to help current MSJ seniors make their decisions on where to attend school. Please answer them with the undergraduate institution you will be graduating from in mind.</p>
         <p>There are three buckets of questions: academic/professional, lifestyle/social, and general questions. The questions are a mix of required and optional -- answer as you see fit. Thank you, we appreciate your help!!</p>
         <hr></hr>
     </div>
@@ -73,8 +74,8 @@ function Alumni(props) {
       <Form className = "alum-form" noValidate validated={validated} onSubmit={handleSubmit} style={{fontFamily: 'Nunito'}} autoComplete="off">
         <Form.Row>
           <Form.Group controlId="exampleForm.SelectCustom">
-            <Form.Label >Select University*</Form.Label>
-            <Form.Control as="select" required custom name = "school" onChange={e => setSchool(e.target.value)}>
+            <Form.Label >Select University *</Form.Label>
+            <Form.Control as="select" required custom name = "school" defaultValue = "Base" onChange={e => setSchool(e.target.value)}>
               {colleges.map(item => (
                 <option key={item.Institution} value={item.Institution}>
                   {item.Institution}
@@ -86,9 +87,10 @@ function Alumni(props) {
         </Form.Row>
         <Form.Row>
           <Form.Group as={Col} md="4" controlId="validationCustom01">
-            <Form.Label>Name (optional)</Form.Label>
+            <Form.Label>Name *</Form.Label>
             <Form.Control
               type="text"
+              required
               name = "name"
               placeholder= "Name"
               onChange={e => setName(e.target.value)}
@@ -97,14 +99,23 @@ function Alumni(props) {
           </Form.Group>
 
           <Form.Group as={Col} md="4" controlId="validationCustom02">
-            <Form.Label>Email (optional)</Form.Label>
+            <Form.Label>Email *</Form.Label>
             <Form.Control
               type="email"
               placeholder= "Email"
               name = "minor"
+              required
               onChange={e => setEmail(e.target.value)}
             />
             <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          </Form.Group>
+
+          <Form.Group as={Col} controlId="selectCustom">
+            <Form.Label >Would you like to be anonymous? *</Form.Label>
+            <Form.Control as="select" required custom name = "anon" defaultValue = "Yes" onChange={e => setAnon(e.target.value)}>
+              <option>Yes</option>
+              <option>No</option>
+            </Form.Control>
           </Form.Group>
         </Form.Row>
 

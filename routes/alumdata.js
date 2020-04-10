@@ -11,6 +11,7 @@ const alumDataSchema = new Schema({
   major: {type: String, required: true},
   minor: {type: String, required: false},
   grad: {type: String, required: true},
+  anon: {type: String, required: true},
   q0: {type: String, required: true},
   q1: {type: String, required: true},
   q2: {type: String, required: false},
@@ -33,6 +34,7 @@ router.route('/add').post((req, res) => {
   const major = req.body.major;
   const minor = req.body.minor;
   const grad = req.body.grad;
+  const anon = req.body.anon;
   const q0 = req.body.q0;
   const q1 = req.body.q1;
   const q2 = req.body.q2;
@@ -48,7 +50,7 @@ router.route('/add').post((req, res) => {
   const currAlumDataRef = mongoose.model(school, alumDataSchema);
 
   const newAlumData = new currAlumDataRef({
-    school, name, email, major, minor, grad, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9,
+    school, name, email, major, minor, grad, anon, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9,
   });
 
   newAlumData.save()

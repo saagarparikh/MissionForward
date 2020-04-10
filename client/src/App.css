@@ -30,6 +30,9 @@
   font-family: 'Nunito', sans-serif;
 }
 
+.alum-form-header hr{
+  border-top: 2px solid black;
+}
 
 .alum-form{
   width: 50%;
@@ -99,7 +102,7 @@
 }
 .cards{
   display: flex;
-  margin-top: 250px;
+  margin-top: 150px;
   overflow: auto;
   position: relative;
   width: 100%;
@@ -134,17 +137,17 @@
 }
 
 .about-body-text h1{
-  font-family: 'Heebo';
+  font-family: 'Nunito';
   text-align: center;
 }
 
 .about-body-text h2{
-  font-family: 'Heebo';
+  font-family: 'Nunito';
   text-align: left;
 }
 
 .about-body-text h4{
-  font-family: 'Heebo';
+  font-family: 'Nunitos';
   text-align: left;
 }
 
@@ -172,10 +175,10 @@
 
 .landing-grid {
   background: white;
-  position: fixed;
   text-align: center;
   font-family: 'Nunito', sans-serif;
-  overflow-y:scroll
+  overflow: 'auto';
+  padding-top: 125px;
 }
 
 .stock-image {
@@ -186,7 +189,7 @@
 }
 
 .banner-text{
-  margin-top: 150px;
+  margin-top: 20px;
   font-family: 'Nunito', sans-serif;
   justify-content: space-between;
 }
@@ -204,7 +207,7 @@
 }
 
 .banner-text h5{
-  width: 75%;
+  width: 90%;
   padding: 1em;
   font-family: 'Nunito', sans-serif;
   color: black;
