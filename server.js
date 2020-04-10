@@ -22,7 +22,13 @@ const alumniDataRouter = require('./routes/alumdata');
 
 app.use('/alumni-data', alumniDataRouter);
 
-app.use(express.static('client/build'));
+if(process.env.NODE_ENV === 'production'){
+  app.use(esxpress.static('client/build'));
+
+  app.get('*', (req, res) =>{
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  });
+}
 
 app.listen(port, () => {
   console.log('Mission Forward Server is now on Port: ' + port);
