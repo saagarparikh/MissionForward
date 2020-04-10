@@ -1,5 +1,5 @@
 {
-  "name": "Mission Forward",
+  "name": "backend",
   "version": "1.0.0",
   "description": "Mission Forward Backend",
   "main": "server.js",
@@ -8,7 +8,7 @@
     "build": "cd client && npm run build",
     "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
-    "start": "node server.js",
+    "start": "node server.js && heroku-postbuild",
     "client": "cd client && npm start"
   },
   "author": "",
