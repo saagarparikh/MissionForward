@@ -54,7 +54,7 @@ function Alumni(props) {
         q9: q9
       }
 
-      axios.post('http://localhost:5000/alumni-data/add', alumniData)
+      axios.post('/alumni-data/add', alumniData)
         .then(res => console.log(res.data));
 
       props.history.replace('/alum-confirm')
