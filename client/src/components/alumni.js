@@ -216,7 +216,7 @@ function Alumni(props) {
 }
 
 async function onConfirmAlum(alumniData){
-  let ret = await axios.post('http://localhost:5000/alumni-data/add', alumniData)
+  let ret = await axios.post('/alumni-data/add', alumniData)
     .then(res => console.log(res.data));
   return ret;
 }

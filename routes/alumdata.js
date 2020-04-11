@@ -20,7 +20,7 @@ const alumDataSchema = new Schema({
   q5: {type: String, required: false},
   q6: {type: String, required: true},
   q7: {type: String, required: true},
-  q8: {type: String, required: true},
+  q8: {type: String, required: false},
   q9: {type: String, required: false},
 }, {
   timestamps: true,
@@ -41,8 +41,8 @@ router.route('/add').post((req, res) => {
   const q3 = req.body.q3;
   const q4 = req.body.q4;
   const q5 = req.body.q5;
-  const q6 = req.body.q7;
-  const q7 = req.body.q8;
+  const q6 = req.body.q6;
+  const q7 = req.body.q7;
   const q8 = req.body.q8;
   const q9 = req.body.q9;
 
