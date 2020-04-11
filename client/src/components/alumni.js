@@ -55,8 +55,7 @@ function Alumni(props) {
         q9: q9
       }
 
-      axios.post('/alumni-data/add', alumniData)
-        .then(res => console.log(res.data));
+      onConfirmAlum(alumniData)
 
       props.history.replace('/alum-confirm')
     }
@@ -214,6 +213,12 @@ function Alumni(props) {
       </Form>
     </div>
   );
+}
+
+async function onConfirmAlum(alumniData){
+  let ret = await axios.post('http://localhost:5000/alumni-data/add', alumniData)
+    .then(res => console.log(res.data));
+  return ret;
 }
 
 async function onRegisterAlum(school, name, major, minor, email, grad, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9) {
