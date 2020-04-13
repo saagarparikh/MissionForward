@@ -52,7 +52,8 @@ function Alumni(props) {
         q6: q6,
         q7: q7,
         q8: q8,
-        q9: q9
+        q9: q9,
+        timestamp: new Date().getTime()
       }
 
       onConfirmAlum(alumniData)
@@ -216,7 +217,7 @@ function Alumni(props) {
 }
 
 async function onConfirmAlum(alumniData){
-  let ret = await axios.post('/alumni-data/add/', alumniData)
+  let ret = await axios.post('/alumni-data/add/' + '?nocache=' + new Date().getTime(), alumniData)
     .then(res => console.log(res.data));
   return ret;
 }
