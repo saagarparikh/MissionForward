@@ -20,8 +20,10 @@ connection.once('open', () => {
 })
 
 const alumniDataRouter = require('./routes/alumdata');
+const schoolsRouter = require('./routes/schools');
 
 app.use('/alumni-data', alumniDataRouter);
+app.use('/schools', schoolsRouter);
 
 if(process.env.NODE_ENV === 'production'){
   app.use(express.static('client/build'));

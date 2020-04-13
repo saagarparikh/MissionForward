@@ -26,6 +26,29 @@ const alumDataSchema = new Schema({
   timestamps: true,
 });
 
+router.route('/get').get((req, res) =>{
+  const currAlumDataRef = mongoose.model("Brown University", alumDataSchema);
+  const yeah= mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}
+  );
+  const connection = mongoose.connection;
+  connection.once('open', function () {
+      connection.db.listCollections().toArray(function (err, names) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(names);
+        }
+
+        mongoose.connection.close();
+      });
+  });
+
+  res.send("test");
+
+});
+
+
+
 router.route('/add').post((req, res) => {
 
   const school = req.body.school;

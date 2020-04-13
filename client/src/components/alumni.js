@@ -102,7 +102,7 @@ function Alumni(props) {
             <Form.Control
               type="email"
               placeholder= "Email"
-              name = "minor"
+              name = "email"
               required
               onChange={e => setEmail(e.target.value)}
             />
