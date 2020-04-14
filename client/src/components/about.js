@@ -56,9 +56,10 @@ class About extends Component{
           </h5>
           <br></br>
           <h5>We hope that our product helps enlighten these other important factors that you might not easily see on a rankings list. 
-              Please let us know if you have any questions in the meantime, and we will be sure to update you when the website is live!
+              Please let us know if you have any questions in the meantime.
           </h5>
         </div>
+
       </div>
     );
   }
