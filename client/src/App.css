@@ -147,7 +147,7 @@
 
 .zNoeh > ul {
   overflow-y: auto;
-  height: 25vh;
+  max-height: 25vh;
   margin-right: 0% !important;
 }
 

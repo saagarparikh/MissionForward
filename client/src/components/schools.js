@@ -81,33 +81,33 @@ class schoolList extends Component{
                     <h2>Top Responses From Our Alumni</h2>
                     <Row className="top-schools-cards">
                         <Col sm={4}>
-                            <Link to={"/schools/" + "University-of-California-Berkeley"} onClick={this.onClickSchool} style={{textDecoration: 'none'}}>
+                            <Link to={"/schools/" + "University of California-Berkeley"} onClick={this.onClickSchool} style={{textDecoration: 'none'}}>
                                 <Card className="top-schools-card">
                                     <Card.Img variant="top" src={TopCal} />
                                     <Card.Body>
-                                        <Card.Title className="top-schools-card-text">University of California, Berkeley</Card.Title>
+                                        <Card.Title className="top-schools-card-text">University of California-Berkeley</Card.Title>
                                     </Card.Body>
                                 </Card>
                             </Link>
                         </Col>
 
                         <Col sm={4}>
-                            <Link to={"/schools/" + "University-of-California-Berkeley"} onClick={this.onClickSchool} style={{textDecoration: 'none'}}>
+                            <Link to={"/schools/" + "University of California-Davis"} onClick={this.onClickSchool} style={{textDecoration: 'none'}}>
                                 <Card className="top-schools-card">
                                     <Card.Img variant="top" src={TopUCD} />
                                     <Card.Body>
-                                        <Card.Title className="top-schools-card-text">University of California, Davis</Card.Title>
+                                        <Card.Title className="top-schools-card-text">University of California-Davis</Card.Title>
                                     </Card.Body>
                                 </Card>
                             </Link>
                         </Col>
 
                         <Col sm={4}>
-                            <Link to={"/schools/" + "University-of-California-Berkeley"} onClick={this.onClickSchool} style={{textDecoration: 'none'}}>
+                            <Link to={"/schools/" + "University of California-Santa Barbara"} onClick={this.onClickSchool} style={{textDecoration: 'none'}}>
                                 <Card className="top-schools-card">
                                     <Card.Img variant="top" src={TopUCSB} />
                                     <Card.Body>
-                                        <Card.Title className="top-schools-card-text">University of California, Santa Barbara</Card.Title>
+                                        <Card.Title className="top-schools-card-text">University of California-Santa Barbara</Card.Title>
                                     </Card.Body>
                                 </Card>
                             </Link>
