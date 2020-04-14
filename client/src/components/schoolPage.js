@@ -10,23 +10,42 @@ import {replace} from 'lodash';
 
 import {Row, Col, Nav, Tab} from 'react-bootstrap'
 
+import axios from 'axios';
+
 
 class SchoolPage extends Component{
   constructor(props) {
     super(props);
     this.state = {
       activeTab: 0,
-      school: ''
+      school: '',
+      answers: [],
     };
     this.onSelectTab = this.onSelectTab.bind(this);
   }
 
+
   componentDidMount () {
+    console.log(this.props.match.params)
     const { school } = this.props.match.params;
-    console.log(school)
     this.setState({
       school: school
   });
+    const data = {
+      school: school
+    }
+    axios.get('http://localhost:5000/alumni-data/get-school-data', {
+      params:{
+        school: school
+      }
+    }).then(response => {
+              this.setState({
+                  answers: response.data.answers
+              })
+            })
+            .catch((error) => {
+              console.log(error);
+            });;
   }
 
   onSelectTab (tabID) {
@@ -37,8 +56,8 @@ class SchoolPage extends Component{
   }
 
   toggleCategories() {
-    console.log(this.state.activeTab)
     if(this.state.activeTab == 0) {
+      //console.log("hello")
       return(
         <div className="school-question-boxes">
           <ExpansionPanel>
@@ -48,37 +67,56 @@ class SchoolPage extends Component{
             <ExpansionPanelDetails>
               <div>
                 {
-                JsonFile.answers.map((a) => {
+                this.state.answers.map((a) => {
                   if(a.id === 0) {
                 return(
                   <div>
                     {
-                      a.answers.map((a) => {
+                      a.answer.map((a) => {
                         return(
                           <div>
-                            <b>"</b>
-                            {a.answers}
-                            <b>"</b>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
                           </div>
                         ); })
                     }
                   </div>
-                );} 
+                );}
               })
               }
               </div>
 
             </ExpansionPanelDetails>
           </ExpansionPanel>
-          
+
           <ExpansionPanel>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <div className="school-question" variant="h5">What types of resources (e.g. clubs, programs, career fairs) does your school have to help with internships, career planning, and on-campus jobs (e.g. research)?</div>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 1) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -89,8 +127,26 @@ class SchoolPage extends Component{
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 2) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -105,21 +161,57 @@ class SchoolPage extends Component{
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 3) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
 
             </ExpansionPanelDetails>
           </ExpansionPanel>
-          
+
           <ExpansionPanel>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <div className="school-question" variant="h5">Describe the student body culture (e.g. atmosphere, social dynamics) in the way you experienced it.</div>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 4) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -130,20 +222,26 @@ class SchoolPage extends Component{
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
-              </div>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-
-          <ExpansionPanel>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <div className="school-question" variant="h5">What types of events were held both on-campus and off-campus?</div>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 5) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -159,45 +257,57 @@ class SchoolPage extends Component{
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 6) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
 
             </ExpansionPanelDetails>
           </ExpansionPanel>
-          
+
           <ExpansionPanel>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <div className="school-question" variant="h5">What specific aspect of your school are you most grateful for?</div>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
-              </div>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-
-          <ExpansionPanel>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <div className="school-question" variant="h5">When you were a senior in high school, what were the TWO main factors you considered when making a decision on where to attend college?</div>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
-              </div>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-
-          <ExpansionPanel>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <div className="school-question" variant="h5">Now looking back at your college experience, what TWO factors do you wish you had made your decision off of?</div>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 7) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -208,8 +318,26 @@ class SchoolPage extends Component{
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 8) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -220,8 +348,26 @@ class SchoolPage extends Component{
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 9) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -236,21 +382,57 @@ class SchoolPage extends Component{
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 0) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
 
             </ExpansionPanelDetails>
           </ExpansionPanel>
-          
+
           <ExpansionPanel>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <div className="school-question" variant="h5">What types of resources (e.g. clubs, programs, career fairs) does your school have to help with internships, career planning, and on-campus jobs (e.g. research)?</div>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 1) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -261,33 +443,87 @@ class SchoolPage extends Component{
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 2) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
-          
+
           <ExpansionPanel>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <div className="school-question" variant="h5">Describe your experience with school facilities (e.g. dining halls, dorms, athletic facilities).</div>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 3) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
 
             </ExpansionPanelDetails>
           </ExpansionPanel>
-          
+
           <ExpansionPanel>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <div className="school-question" variant="h5">Describe the student body culture (e.g. atmosphere, social dynamics) in the way you experienced it.</div>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 4) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -298,20 +534,26 @@ class SchoolPage extends Component{
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
-              </div>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-
-          <ExpansionPanel>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <div className="school-question" variant="h5">What types of events were held both on-campus and off-campus?</div>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 5) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -322,45 +564,57 @@ class SchoolPage extends Component{
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 6) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
 
             </ExpansionPanelDetails>
           </ExpansionPanel>
-          
+
           <ExpansionPanel>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <div className="school-question" variant="h5">What specific aspect of your school are you most grateful for?</div>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
-              </div>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-
-          <ExpansionPanel>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <div className="school-question" variant="h5">When you were a senior in high school, what were the TWO main factors you considered when making a decision on where to attend college?</div>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
-              </div>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-
-          <ExpansionPanel>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <div className="school-question" variant="h5">Now looking back at your college experience, what TWO factors do you wish you had made your decision off of?</div>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 7) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -371,8 +625,26 @@ class SchoolPage extends Component{
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 8) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -383,11 +655,30 @@ class SchoolPage extends Component{
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 9) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>Major: </b> {a.major}, {a.co}
+                            <p> <b>Response: </b>{a.answers}</p>
+                            <p></p>
+                            <hr></hr>
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
+
         </div>
       )
     }
@@ -433,8 +724,8 @@ class SchoolPage extends Component{
               </Tab.Content>
             </Col>
           </Row>
-        </Tab.Container>  
-        
+        </Tab.Container>
+
       </div>
     );
   }

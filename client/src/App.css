@@ -145,6 +145,16 @@
   border: 2px solid #cacaca96 !important;
 }
 
+.zNoeh > ul {
+  overflow-y: auto;
+  height: 25vh;
+  margin-right: 0% !important;
+}
+
+.zNoeh {
+  width: 49vw;
+}
+
 .schools-list-button {
   font-size: 17px;
   color: #EFA885;

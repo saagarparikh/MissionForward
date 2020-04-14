@@ -9,6 +9,7 @@ import TopUCD from '../img/school-logos/uc-davis-logo.png';
 import TopUCSB from '../img/school-logos/uc-santa-barbara-logo.png';
 
 import ReactSearchBox from 'react-search-box';
+import axios from 'axios';
 
 
 class schoolList extends Component{
@@ -16,21 +17,35 @@ class schoolList extends Component{
         super(props);
         this.state = {
             curr_school: "",
-            data : []
+            data : [],
+            schools : []
         };
+
+        axios.get('http://localhost:5000/alumni-data/get-schools')
+            .then(response => {
+                this.setState({
+                    schools: response.data.schools
+                })
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        
     }
 
-    componentDidMount(){
-        JsonFile.schools.map((value) => {
-            this.state.data.push({value});
-        });
+    iterateSchools = () => {
+        console.log("in iterateschools")
+        for (var i in this.state.schools) {
+            var current = {value: this.state.schools[i]};
+            this.state.data.push(current)
+        }
     };
 
     onSelectSearch = (e) => {
         this.setState({
             curr_school: e.value,
         });
-        window.location.href="/schools/" + replace(e.value, /-/g, " ")
+        window.location.href="/schools/" + e.value
     };
 
     onClickSchool = (e) => {
@@ -40,6 +55,7 @@ class schoolList extends Component{
     };
     
     render() {
+        this.iterateSchools();
         return(
             <div className="schools-page">
                 <div className="schools-title">
@@ -102,10 +118,10 @@ class schoolList extends Component{
             
                 <div id="list" className="schools-list">
                     <h3>Currently Supported Schools</h3>
-                    {JsonFile.schools.map((s) => {
+                    {this.state.schools.map((s) => {
                         return(
                         <div >
-                            <Link className="schools-name" text={s} to={"/schools/" + replace(s, /-/g, " ")} onClick={this.onClickSchool}>{s}</Link>
+                            <Link className="schools-name" text={s} to={"/schools/" + s} onClick={this.onClickSchool}>{s}</Link>
                         </div>
                         );
                     })}
