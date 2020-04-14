@@ -81,15 +81,25 @@ router.route('/get-school-data').get((req, res) => {
             answers[2].answer.push(getMetaData(data[i], "q2"));
           }
 
+          if(data[i]["q3"] != ""){
+            answers[3].answer.push(getMetaData(data[i], "q3"));
+          }
 
-          answers[3].answer.push(getMetaData(data[i], "q3"));
-          answers[4].answer.push(getMetaData(data[i], "q4"));
+          if(data[i]["q4"] != ""){
+            answers[4].answer.push(getMetaData(data[i], "q4"));
+          }
 
           if(data[i]["q5"] != ""){
             answers[5].answer.push(getMetaData(data[i], "q5"));
           }
-          answers[6].answer.push(getMetaData(data[i], "q6"));
-          answers[7].answer.push(getMetaData(data[i], "q7"));
+
+          if(data[i]["q6"] != ""){
+            answers[6].answer.push(getMetaData(data[i], "q6"));
+          }
+
+          if(data[i]["q7"] != ""){
+            answers[7].answer.push(getMetaData(data[i], "q7"));
+          }
 
           if(data[i]["q8"] != ""){
             answers[8].answer.push(getMetaData(data[i], "q8"));

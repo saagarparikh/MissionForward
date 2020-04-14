@@ -21,7 +21,7 @@ class schoolList extends Component{
             schools : []
         };
 
-        axios.get('http://localhost:5000/alumni-data/get-schools')
+        axios.get('/alumni-data/get-schools/')
             .then(response => {
                 this.setState({
                     schools: response.data.schools
@@ -30,7 +30,7 @@ class schoolList extends Component{
             .catch((error) => {
                 console.log(error);
             });
-        
+
     }
 
     iterateSchools = () => {
@@ -53,7 +53,7 @@ class schoolList extends Component{
             curr_school: e.target.text,
         });
     };
-    
+
     render() {
         this.iterateSchools();
         return(
@@ -87,7 +87,7 @@ class schoolList extends Component{
                                     <Card.Body>
                                         <Card.Title className="top-schools-card-text">University of California, Berkeley</Card.Title>
                                     </Card.Body>
-                                </Card> 
+                                </Card>
                             </Link>
                         </Col>
 
@@ -98,7 +98,7 @@ class schoolList extends Component{
                                     <Card.Body>
                                         <Card.Title className="top-schools-card-text">University of California, Davis</Card.Title>
                                     </Card.Body>
-                                </Card> 
+                                </Card>
                             </Link>
                         </Col>
 
@@ -109,13 +109,13 @@ class schoolList extends Component{
                                     <Card.Body>
                                         <Card.Title className="top-schools-card-text">University of California, Santa Barbara</Card.Title>
                                     </Card.Body>
-                                </Card> 
+                                </Card>
                             </Link>
                         </Col>
                     </Row>
                 </div>
 
-            
+
                 <div id="list" className="schools-list">
                     <h3>Currently Supported Schools</h3>
                     {this.state.schools.map((s) => {
@@ -131,4 +131,4 @@ class schoolList extends Component{
     }
 }
 
-export default schoolList; 
+export default schoolList;

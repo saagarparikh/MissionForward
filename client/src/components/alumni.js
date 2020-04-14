@@ -66,11 +66,11 @@ function Alumni(props) {
       <div className = "alum-form-header">
         <h1><b>College &amp; University Alumni Survey</b></h1>
         <h5>These responses will <b>ANONYMOUSLY</b> (unless you note otherwise) be shared publicly, with the intent to help current
-            MSJ seniors make their decisions on where to attend school. Please answer them with the undergraduate institution 
+            MSJ seniors make their decisions on where to attend school. Please answer them with the undergraduate institution
             you will be graduating from in mind.
         </h5>
         <br></br>
-        <h5>There are three buckets of questions: academic/professional, lifestyle/social, and general questions. The questions 
+        <h5>There are three buckets of questions: academic/professional, lifestyle/social, and general questions. The questions
             are a mix of required and optional -- answer as you see fit. Thank you, we appreciate your help!!
         </h5>
 

@@ -34,7 +34,7 @@ class SchoolPage extends Component{
     const data = {
       school: school
     }
-    axios.get('http://localhost:5000/alumni-data/get-school-data', {
+    axios.get('/alumni-data/get-school-data/', {
       params:{
         school: school
       }
@@ -692,7 +692,7 @@ class SchoolPage extends Component{
         <Tab.Container className="category-tabs" defaultActiveKey={0} onSelect={this.onSelectTab}>
           <Row>
             <Col className="question-tabs">
-              <Nav variant="pills" className="flex-column" > 
+              <Nav variant="pills" className="flex-column" >
                 <Nav.Item>
                   <Nav.Link className="question-tab" eventKey={0}>Academic</Nav.Link>
                 </Nav.Item>
