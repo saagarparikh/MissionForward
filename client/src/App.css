@@ -1,97 +1,256 @@
 .navbar {
   min-height: 50px;
   background-color: white;
-  /* background-color: #27ae60; */
+  padding-left: 10.6% !important;
+  padding-top: 1.5% !important;
+  font-family: Heebo;
+}
+
+.navbar-light .navbar-brand {
+  font-size: 35px;
+  color: #F6C270 !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  font-size: 25px;
+  color: #F6C270 !important;
+}
+
+.col-sm-2 {
+  padding-left: 0% !important;
+}
+.col-sm-3 {
+  padding-left: 0% !important;
+}
+.col-sm-4 {
+  padding-left: 0% !important;
+}
+
+.col-sm-5 {
+  padding-left: 0% !important;
+}
+.col-sm-6 {
+  padding-left: 0% !important;
+}
+.col-sm-7 {
+  padding-left: 0% !important;
 }
 
 .page-content{
   padding-top: 3%;
 }
 
-.question-tabs{
-  margin-left: 20%;
-  font-size: 15px;
-}
-
 .flex-column {
   padding-top: 20%;
 }
 
+/* ------------------------- ALUMNI PAGE ------------------------- */
+
+.alumni-page{
+  margin-top: 15%;
+  padding-bottom: 5%;
+}
+
 .alum-form-header h1{
-  font-family: 'Nunito', sans-serif;
-  text-align: center;
+  font-family: Heebo;
+  font-size: 80px;
+  padding-bottom: 1%
 }
 
-.alum-form-header p{
-  font-family: 'Nunito', sans-serif;
+.alum-form-header h5{
+  font-family: Heebo;
+  font-size: 20px;
+  font-weight: 300;
 }
 
-.alum-form h3{
-  font-family: 'Nunito', sans-serif;
+.alumni-form-button-div {
+  display: flex;
+}
+
+.btn.alumni-form-button {
+  font-family: Heebo;
+  font-size: 25px;
+  margin: 4% 0% 5% 0%;
+  background-color: rgb(87, 133, 61);
+  border-color: rgb(87, 133, 61);
+}
+
+.btn.alumni-form-button:hover {
+  background-color: rgb(112, 172, 77);
+  border-color: rgb(112, 172, 77);
 }
 
 .alum-form-header hr{
   border-top: 2px solid black;
 }
 
-.alum-form{
-  width: 50%;
-  margin: auto;
-}
-
 .alum-form-header{
-  width: 55%;
+  width: 78.8%;
+  margin: auto;
+  padding-bottom: 10%;
+}
+
+.alum-form{
+  font-family: Heebo;
+  font-size: 20px;
+  width: 78%;
   margin: auto;
 }
 
-.tab-text{
-  color: black !important;
-  font-size: 25px !important;
+.alum-form h3{
   font-family: Heebo;
-  /* font-family: 'Nunito', sans-serif; */
 }
 
-.main-school-page-title {
+.btn.alumni-form-submit{
+  font-family: Heebo;
+  font-size: 20px;
+  background-color: rgb(87, 133, 61);
+}
+
+/* ---------------------------------------------------------------- */
+
+/* ------------------------- SCHOOLS PAGE -------------------------*/
+
+.schools-page{
+  padding-bottom: 5%;
+}
+
+.schools-title {
+  font-family: Heebo;
+  padding-top: 10%;
+  padding-left: 10.6%;
+  height: 75vh;
+  color: #EFA885;
+}
+
+.schools-title h1{
+  font-size: 80px;
+}
+
+.schools-title h5{
   font-family: Heebo;
   font-size: 35px;
-  text-align: center;
-  color: black;
+  font-weight: 100;
+  padding-bottom: 3%;
 }
 
-.school-name:hover{
-    border:2px solid #2ecc71;
-    background-color: #2ecc71;
-    border-radius: 5px;
-    /* box-shadow: 1px 1pxgrey; */
-}
-
-.main-school-list{
+.jwfbbd {
   font-family: Heebo;
-  font-size: 15px;
-  padding-left: 10%;
-  padding-top: 5%;
-  color: black;
+  font-size: 1.5rem !important;
+  color: #969696 !important;
+  border-radius: 0.7rem !important;
+  font-weight: 300;
+  height: 5vh !important;
+  width: 55%;
+  border: 2px solid #cacaca96 !important;
 }
 
-.main-school-list a:link, .main-school-list a:visited{
+.schools-list-button {
+  font-size: 17px;
+  color: #EFA885;
+}
+
+.schools-list-button:hover {
+  color: #EFA885;
+  text-decoration: none;
+}
+
+.top-schools-cards-background{
+  background-color: #F6F1EE;
+}
+
+.top-schools-cards-background h2{
+  font-family: Heebo;
+  font-size: 60px;
+  font-weight: 300;
+  color: #EFA885;
+  padding: 2% 10.6% 2% 10.6%;
+}
+
+.row.top-schools-cards{
+  width: 100%;
+  height: 45vh;
+  margin: 0% 0% 0% 0%;
+  padding: 0% 10.6% 5% 10.6%;
+}
+
+.top-schools-card{
+  width: 29rem;
+}
+
+.top-schools-card:hover{
+  width: 30rem;
+}
+
+.top-schools-card-text{
+  /* text-align: center; */
+  color: black;
+  margin-left: 3%;
+}
+
+.schools-name:hover{
+  font-weight: bold;
+  color: #EFA885;
+  text-decoration: none;
+}
+
+.schools-list {
+  font-family: Heebo;
+  font-size: 35px;
+  padding-left: 10.6%;
+  padding-top: 5%;
+}
+
+.schools-list a{
+  font-weight: 100;
   color: black;
   text-decoration: none;
 }
 
-.UCSB{
-  align-content: center;
-  margin: auto;
+.schools-list h3 {
+  font-family: Heebo;
+  font-size: 60px;
+  font-weight: 100;
+  color: #EFA885;
+  padding-bottom: 3%;
+}
+
+/* ---------------------------------------------------------------*/
+
+.school-page {
+  padding-top: 7%;
+}
+
+.school-title {
+  font-family: Heebo;
+  font-size: 80px;
+  padding-left: 10.6%;
+  color: #5583A6;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link, .nav-pills .nav-link:hover {
+  background-color: #5583A6 !important;
+  color: white;
+}
+
+.question-tabs {
+  margin-left:10.6%;
+  /* margin-top: 3%; */
+}
+
+.question-tab{
+  font-size: 20px;
+  color: #5583A6;
 }
 
 .school-question-boxes{
-  padding: 3% 5% 3% 5%;
+  padding: 3% 18% 3% 0%;
 }
 
 .school-question{
   font-family: Heebo;
   font-size: 18px;
 }
-
 
 .category-tabs h2{
   font-size: 35px;
@@ -112,52 +271,21 @@
 .card-text{
   color: black !important;
   font-size: 1em !important;
-  font-family: 'Nunito', sans-serif;
-}
-.register{
-  margin: auto;
-  display: 'flex';
-  padding: 2px 3px 3px;
-  align-items: center;
-  display: flex;
+  font-family: Heebo;
 }
 
 .register-title{
   align-items: center !important;
   align-content: center !important;
 }
-.about-body-text{
-  left: 0;
-  width: 75%;
-  height: 100%;
-  text-align: left;
-  font-family: 'Heebo';
-  color: black;
-  margin: auto;
-}
-
-.about-body-text h1{
-  font-family: 'Nunito';
-  text-align: center;
-}
-
-.about-body-text h2{
-  font-family: 'Nunito';
-  text-align: left;
-}
-
-.about-body-text h4{
-  font-family: 'Nunitos';
-  text-align: left;
-}
 
 .confirm-body-text h1{
-  font-family: 'Nunito', sans-serif;
+  font-family: Heebo;
   text-align: center;
 }
 
 .confirm-body-text h4{
-  font-family: 'Nunito', sans-serif;
+  font-family: Heebo;
   text-align: center;
   width: 50%;
   margin: auto;
@@ -165,7 +293,7 @@
 
 .header-color{
   background: #3f51b5 !important;
-  font-family: 'Nunito', sans-serif !important;
+  font-family: Heebo !important;
 }
 
 .header-color a:link, .header-color a:visited{
@@ -173,48 +301,219 @@
   text-decoration: none;
 }
 
-.landing-grid {
+
+/* ------------------------- LANDING PAGE -------------------------*/
+
+.landing-page {
   background: white;
-  text-align: center;
-  font-family: 'Nunito', sans-serif;
-  overflow: 'auto';
-  padding-top: 125px;
+  font-family: "Heebo";
+  padding: 0%;
 }
 
-.stock-image {
-  margin-top: 60px;
+.row.landing-page-main-page {
+  height: 80vh;
+  margin: 0% 12% 5% 10.6%;
+  overflow: hidden;
+}
+
+.landing-page-pic {
+  height: 55vh;
+  margin-top: 20%;
+  padding-left: 9%;
+}
+
+.landing-page-text {
+  margin-top: 52%;
+}
+
+.landing-page-text h3{
+  font-family: Heebo;
+  font-size: 3vh;
+  font-weight: 300;
+}
+
+.landing-page-text h1{
+  font-family: Heebo;
+  font-size: 8vh;
+  display: inline;
+}
+
+.landing-page-text h2{
+  font-family: Heebo;
+  font-size: 8vh;
+  font-weight: 300;
+  display: inline;
+}
+
+.landing-page-text h5{
+  font-family: Heebo;
+  margin-bottom:10%;
+  font-size: 2.4vh;
+  font-weight: 100;
+}
+
+.btn.landing-page-button{
+  font-family: Heebo;
+  font-size: 30px;
+  background-color: #339A9F;
+  border-radius: 31px;
+  padding: 2% 5% 2% 5%;
+  border: none;
+}
+
+.btn.landing-page-button:hover{
+  background-color: rgb(62, 184, 190);
+}
+
+.row.landing-page-cards{
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  margin: 0% 0% 0% 0%;
+  padding: 5% 10.6% 5% 10.6%;
+  background-color: #F6C270;
+  opacity: .84;
 }
 
-.banner-text{
-  margin-top: 20px;
-  font-family: 'Nunito', sans-serif;
-  justify-content: space-between;
+.landing-page-card {
+  width: 28rem;
+  text-align: center;
 }
 
-.banner-text h2{
-  font-weight: bold;
-  color: black;
-  font-family: 'Nunito', sans-serif;
+.card-img-top {
+  width: 60% !important;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10%;
+  padding-bottom: 10%;
 }
 
-.banner-text hr{
-  border-top: 2px solid black;
-  width: 75%;
-  margin: auto;
+.row.landing-page-form {
+  width: 100%;
+  height: 51vh;
+  margin: 7% 0% 15% 0%;
+  padding: 5% 10.6% 5% 10.6%;
+  background-color: #EFA885;
 }
 
-.banner-text h5{
-  width: 90%;
-  padding: 1em;
-  font-family: 'Nunito', sans-serif;
-  color: black;
-  line-height: 1.6;
-  text-align: left;
-  margin: auto;
+.landing-page-form {
+  margin-bottom: 10%;
 }
+
+.landing-page-form-description {
+  padding-top: 5%;
+  height: 10vh;
+}
+
+.landing-page-form-description h3{
+  font-family: Heebo;
+  font-weight: 100;
+  font-size: 35px;
+  color: white;
+}
+
+.register{
+  background-color: white;
+  border: 0.2px solid rgb(196, 196, 196) !important;
+  padding: 7% 5% 5% 5%;
+  font-size: 19px;
+}
+
+.form-control {
+  font-size: 1.2rem !important;
+}
+
+.register h2{
+  font-family: Heebo;
+  font-size: 35px;
+  padding-bottom: 5%;
+  color: #EFA885;
+}
+
+.btn.register-button{
+  background-color: #EFA885;
+  border-color: #EFA885;
+  font-size: 20px;
+  margin-top: 5%;
+}
+
+/* -------------------------------------------------------------- */
+/* ------------------------- ABOUT PAGE ------------------------- */
+
+.about-page {
+  margin: 10.6% 10.6% 5% 10.6%;
+}
+
+.about-intro {
+  padding-bottom: 33%;
+}
+
+.about-intro h1{
+  font-family: Heebo;
+  font-size: 100px;
+  padding-bottom: 2%;
+}
+
+.about-intro h3{
+  font-family: Heebo;
+  font-size: 30px;
+  font-weight: 100;
+}
+
+.about-info-gap {
+  padding-bottom: 5%;
+}
+
+.about-info-gap h2 {
+  font-family: Heebo;
+  font-size: 50px;
+}
+
+.about-info-gap h3 {
+  font-family: Heebo;
+  font-size: 30px;
+}
+
+.about-info-gap h4 {
+  font-family: Heebo;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.about-info-gap p {
+  font-family: Heebo;
+  font-size: 23px;
+  font-weight: 100;
+}
+
+.about-graphs {
+  padding-top: 5%;
+}
+
+.about-hs-graph {
+  height: 30vh;
+}
+
+.about-college-graph {
+  height: 30vh;
+}
+
+.about-insights h3 {
+  font-family: Heebo;
+  font-size: 30px;
+}
+
+.about-insights h5 {
+  font-family: Heebo;
+  font-size: 23px;
+  font-weight: 100;
+}
+
+.about-quote {
+  text-align: center;
+  color: #6F7B68;
+}
+
+/* -------------------------------------------------------------- */
 
 .form-wrapper {
   width: 400px;
@@ -223,7 +522,7 @@
   padding: 20px 20px;
   border-radius: 10px;
   margin: auto;
-  font-family: 'Nunito', sans-serif;
+  font-family: Heebo;
   margin-bottom: 1em;
 }
 
@@ -320,4 +619,12 @@
   font-size: 1.2em;
   font-weight: lighter;
   color: #999;
+}
+
+html, body {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
 }

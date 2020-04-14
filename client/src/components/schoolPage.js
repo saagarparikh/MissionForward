@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import {Tabs, Tab} from 'react-mdl';
 import JsonFile from '../dummyQuestions.json'
 
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
@@ -7,9 +6,9 @@ import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-import {replace, upperCase} from 'lodash';
+import {replace} from 'lodash';
 
-import {Row, Col, Nav, Tabs, Tab} from 'react-bootstrap'
+import {Row, Col, Nav, Tab} from 'react-bootstrap'
 
 
 class SchoolPage extends Component{
@@ -40,7 +39,6 @@ class SchoolPage extends Component{
   toggleCategories() {
     console.log(this.state.activeTab)
     if(this.state.activeTab == 0) {
-      console.log("hello")
       return(
         <div className="school-question-boxes">
           <ExpansionPanel>
@@ -58,8 +56,9 @@ class SchoolPage extends Component{
                       a.answers.map((a) => {
                         return(
                           <div>
-                            <b>Answer 1: </b>
+                            <b>"</b>
                             {a.answers}
+                            <b>"</b>
                           </div>
                         ); })
                     }
@@ -396,44 +395,28 @@ class SchoolPage extends Component{
 
   render() {
     return(
-      <div className="category-tabs">
-        {/* <img className="university-logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a8/UC_Santa_Barbara_Gauchos_logo.svg/1200px-UC_Santa_Barbara_Gauchos_logo.svg.png" alt="ucsb-logo" width="10%" height="10%"/> */}
-        <h2><b>{upperCase(this.state.school)}</b></h2>
+      <div className="school-page">
+        <h2 className="school-title"><b>{replace(this.state.school,/-/g," ")}</b></h2>
 
-        {/* <Tabs class="nav nav-tabs justify-content-center" defaultActiveKey={0} onSelect={this.onSelectTab}>
-          <Tab eventKey={0} title="Academic">
-            {this.toggleCategories()}
-          </Tab>
-          <Tab eventKey={1} title="Lifestyle">
-            {this.toggleCategories()}
-          </Tab>
-          <Tab eventKey={2} title="Reflection" >
-            {this.toggleCategories()}
-          </Tab>
-          <Tab eventKey={3} title="View All" >
-            {this.toggleCategories()}
-          </Tab>
-        </Tabs> */}
-
-        <Tab.Container defaultActiveKey={0} onSelect={this.onSelectTab}>
+        <Tab.Container className="category-tabs" defaultActiveKey={0} onSelect={this.onSelectTab}>
           <Row>
-            <Col sm={2}>
+            <Col className="question-tabs">
               <Nav variant="pills" className="flex-column" > 
                 <Nav.Item>
-                  <Nav.Link className="question-tabs" eventKey={0}>Academic</Nav.Link>
+                  <Nav.Link className="question-tab" eventKey={0}>Academic</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link className="question-tabs" eventKey={1}>Lifestyle</Nav.Link>
+                  <Nav.Link className="question-tab" eventKey={1}>Lifestyle</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link className="question-tabs" eventKey={2}>Reflection</Nav.Link>
+                  <Nav.Link className="question-tab" eventKey={2}>Reflection</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link className="question-tabs" eventKey={3}>View All</Nav.Link>
+                  <Nav.Link className="question-tab" eventKey={3}>View All</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Col>
-            <Col sm={9}>
+            <Col className="school-questions"sm={9}>
               <Tab.Content>
                 <Tab.Pane eventKey={0}>
                   {this.toggleCategories()}

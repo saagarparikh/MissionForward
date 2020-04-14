@@ -1,38 +1,20 @@
-import React, { useState } from 'react'
-import {Paper,Button, FormControl, Input, InputLabel } from '@material-ui/core'
-import withStyles from '@material-ui/core/styles/withStyles'
-import { withRouter } from 'react-router-dom'
-import firebase from './firebase'
+import React, { useState } from 'react';
+import {Paper, FormControl, Input, InputLabel } from '@material-ui/core';
+import withStyles from '@material-ui/core/styles/withStyles';
+import { withRouter } from 'react-router-dom';
+import firebase from './firebase';
+import {Form, Button} from 'react-bootstrap';
+
 const styles = theme => ({
 	main: {
 		width: 'auto',
 		display: 'block', // Fix IE 11 issue.
-		marginLeft: theme.spacing.unit * 3,
 		marginRight: theme.spacing.unit * 3,
 		[theme.breakpoints.up(400 + theme.spacing.unit * 3 * 2)]: {
 			width: 400,
-			marginLeft: 'auto',
 			marginRight: 'auto',
 		},
-	},
-	paper: {
-		marginTop: theme.spacing.unit * 8,
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center',
-		padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
-	},
-	form: {
-		width: '100%', // Fix IE 11 issue.
-		marginTop: theme.spacing.unit,
-	},
-	submit: {
-		marginTop: theme.spacing.unit * 3,
-	},
-
-	title: {
-		padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
-	},
+	}
 })
 
 function Register(props) {
@@ -45,36 +27,38 @@ function Register(props) {
 
 	return (
 		<main className= {classes.main}>
-			<Paper className="register">
-				<form className={classes.form} onSubmit={e => e.preventDefault() && false }>
-					<FormControl margin="normal" required fullWidth>
-						<InputLabel htmlFor="name">Name</InputLabel>
-						<Input id="name" name="name" autoComplete="off" autoFocus value={name} onChange={e => setName(e.target.value)} />
-					</FormControl>
-					<FormControl margin="normal" required fullWidth>
-						<InputLabel htmlFor="email">Email Address</InputLabel>
-						<Input id="email" name="email" autoComplete="off" value={email} onChange={e => setEmail(e.target.value)}  />
-					</FormControl>
-					<FormControl margin="normal" required fullWidth>
-						<InputLabel htmlFor="password">Password</InputLabel>
-						<Input name="password" type="password" id="password" autoComplete="off" value={password} onChange={e => setPassword(e.target.value)}  />
-					</FormControl>
-					<FormControl margin="normal" required fullWidth>
-						<InputLabel htmlFor="highschool">High School</InputLabel>
-						<Input name="highschool" type="text" id="highschool" autoComplete="off" value={highschool} onChange={e => setHighschool(e.target.value)}  />
-					</FormControl>
+			<div className="register">
+				<h2><b>Register</b></h2>
+				<Form className={classes.form} onSubmit={e => e.preventDefault() && false }>
+					<Form.Group controlId="formBasicPassword">
+						<Form.Label>Full Name *</Form.Label>
+						<Form.Control type="input" placeholder="Brian Chou" value={name} onChange={e => setName(e.target.value)}/>
+					</Form.Group>
 
-					<Button
-						type="submit"
-						fullWidth
-						variant="contained"
-						color="primary"
-						onClick={onRegister}
-						className={classes.submit}>
-						Register
-          </Button>
-				</form>
-			</Paper>
+					<Form.Group controlId="formBasicEmail">
+						<Form.Label>Email Address *</Form.Label>
+						<Form.Control type="email" placeholder="missionforward@gmail.com" value={email} onChange={e => setEmail(e.target.value)}/>
+					</Form.Group>
+
+					<Form.Group controlId="formBasicPassword">
+						<Form.Label>Password *</Form.Label>
+						<Form.Control type="input" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/>
+						<Form.Text className="text-muted">
+						Must be at least six characters long
+						</Form.Text>
+					</Form.Group>
+
+					<Form.Group controlId="formBasicInput">
+						<Form.Label>High School*</Form.Label>
+						<Form.Control type="input" placeholder="Mission San Jose High School" value={highschool} onChange={e => setHighschool(e.target.value)}/>
+					</Form.Group>
+					
+					<Button className="register-button" type="submit" onClick={onRegister}>
+						Sign Up
+					</Button>
+				</Form>
+
+			</div>
 		</main>
 	)
 
