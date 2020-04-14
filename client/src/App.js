@@ -10,15 +10,15 @@ function App() {
   return (
     <HttpsRedirect>
     <div>
-      <Navbar variant="light" expand="lg" fixed="top">
+      <Navbar variant="light" className = "NavBar" expand="lg" fixed="top">
         <Navbar.Brand href="/">Mission Forward</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          {/*<Nav className="mr-auto">
+          <Nav className="mr-auto">
             <Nav.Link href="/schoolList">Schools</Nav.Link>
             <Nav.Link href="#">Signup</Nav.Link>
 
-          </Nav>*/}
+          </Nav>
           <Nav className= "ml-auto">
             <Nav.Link href="/alumni">Alumni</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>

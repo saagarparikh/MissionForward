@@ -26,8 +26,9 @@ const alumDataSchema = new Schema({
   timestamps: true,
 });
 
-router.route('/get').get((req, res) =>{
+router.route('/get-schools').get((req, res) =>{
   const currAlumDataRef = mongoose.model("Brown University", alumDataSchema);
+  var schools = [];
   const yeah= mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}
   );
   const connection = mongoose.connection;
@@ -36,16 +37,79 @@ router.route('/get').get((req, res) =>{
         if (err) {
           console.log(err);
         } else {
-          console.log(names);
+          for(var c in names){
+            schools.push(names[c]["name"]);
+          }
+          schools.sort();
+          var result = {schools: schools};
+          res.send(JSON.stringify(result));
         }
-
-        mongoose.connection.close();
       });
   });
-
-  res.send("test");
-
 });
+
+function getMetaData(data, q_id){
+  var result = {major: data["major"], co: data["grad"], answers: data[q_id]};
+  return result;
+}
+
+router.route('/get-school-data').get((req, res) => {
+  const school = req.query.school;
+  console.log(school);
+  //const school = "University of California-Santa Barbara";
+  const SchoolAlumData = mongoose.model(school, alumDataSchema);
+  var answers = [];
+
+  for(var i = 0; i<10; i++){
+    answers.push({id: i, answer: []});
+  }
+
+  SchoolAlumData.find({  })
+    .then((data) => {
+
+        for(var i in data){
+          if(data[i]["q0"] != ""){
+            answers[0].answer.push(getMetaData(data[i], "q0"));
+          }
+
+          if(data[i]["q1"] != ""){
+            console.log(data[i]["q1"])
+            answers[1].answer.push(getMetaData(data[i], "q1"));
+          }
+
+          if(data[i]["q2"] != ""){
+            answers[2].answer.push(getMetaData(data[i], "q2"));
+          }
+
+
+          answers[3].answer.push(getMetaData(data[i], "q3"));
+          answers[4].answer.push(getMetaData(data[i], "q4"));
+
+          if(data[i]["q5"] != ""){
+            answers[5].answer.push(getMetaData(data[i], "q5"));
+          }
+          answers[6].answer.push(getMetaData(data[i], "q6"));
+          answers[7].answer.push(getMetaData(data[i], "q7"));
+
+          if(data[i]["q8"] != ""){
+            answers[8].answer.push(getMetaData(data[i], "q8"));
+          }
+
+          if(data[i]["q9"] != ""){
+            answers[9].answer.push(getMetaData(data[i], "q9"));
+          }
+        }
+        var result = {answers: answers};
+        res.json(result);
+    })
+    .catch((error) => {
+        console.log('error: ', error);
+    });
+})
+
+
+
+
 
 
 

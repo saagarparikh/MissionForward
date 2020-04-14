@@ -1,19 +1,4 @@
 {
-  "uni": "University of California Irvine",
-  "questions": [
-    {
-      "question": "Hardest Challenge?",
-      "id": 0
-    },
-    {
-      "question": "Some other stuf?",
-      "id": 1
-    },
-    {
-      "question": "Haha?",
-      "id": 2
-    }
-  ],
   "answers": [
     {
       "question": "Hardest Challenge?",

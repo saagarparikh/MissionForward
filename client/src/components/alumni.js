@@ -26,6 +26,7 @@ function Alumni(props) {
   const [q9, setQ9] = useState('')
   const colleges = require("./csvjson-3.json")
 
+
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -68,7 +69,7 @@ function Alumni(props) {
         <h1>College/University Alumni Survey</h1>
         <p>These responses will ANONYMOUSLY (unless you note otherwise) be shared publicly, with the intent to help current MSJ seniors make their decisions on where to attend school. Please answer them with the undergraduate institution you will be graduating from in mind.</p>
         <p>There are three buckets of questions: academic/professional, lifestyle/social, and general questions. The questions are a mix of required and optional -- answer as you see fit. Thank you, we appreciate your help!!</p>
-        <hr></hr>
+      <hr></hr>
     </div>
 
       <Form className = "alum-form" noValidate validated={validated} onSubmit={handleSubmit} style={{fontFamily: 'Nunito'}} autoComplete="off">

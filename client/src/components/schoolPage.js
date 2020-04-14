@@ -11,23 +11,42 @@ import {replace, upperCase} from 'lodash';
 
 import {Row, Col, Nav, Tabs, Tab} from 'react-bootstrap'
 
+import axios from 'axios';
+
 
 class SchoolPage extends Component{
   constructor(props) {
     super(props);
     this.state = {
       activeTab: 0,
-      school: ''
+      school: '',
+      answers: [],
     };
     this.onSelectTab = this.onSelectTab.bind(this);
   }
 
+
   componentDidMount () {
+    console.log(this.props.match.params)
     const { school } = this.props.match.params;
-    console.log(school)
     this.setState({
       school: school
   });
+    const data = {
+      school: school
+    }
+    axios.get('http://localhost:5000/alumni-data/get-school-data', {
+      params:{
+        school: school
+      }
+    }).then(response => {
+              this.setState({
+                  answers: response.data.answers
+              })
+            })
+            .catch((error) => {
+              console.log(error);
+            });;
   }
 
   onSelectTab (tabID) {
@@ -38,9 +57,8 @@ class SchoolPage extends Component{
   }
 
   toggleCategories() {
-    console.log(this.state.activeTab)
     if(this.state.activeTab == 0) {
-      console.log("hello")
+      //console.log("hello")
       return(
         <div className="school-question-boxes">
           <ExpansionPanel>
@@ -50,36 +68,52 @@ class SchoolPage extends Component{
             <ExpansionPanelDetails>
               <div>
                 {
-                JsonFile.answers.map((a) => {
+                this.state.answers.map((a) => {
                   if(a.id === 0) {
                 return(
                   <div>
                     {
-                      a.answers.map((a) => {
+                      a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Answer 1: </b>
+                            <b>{a.major}: </b>
                             {a.answers}
                           </div>
                         ); })
                     }
                   </div>
-                );} 
+                );}
               })
               }
               </div>
 
             </ExpansionPanelDetails>
           </ExpansionPanel>
-          
+
           <ExpansionPanel>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <div className="school-question" variant="h5">What types of resources (e.g. clubs, programs, career fairs) does your school have to help with internships, career planning, and on-campus jobs (e.g. research)?</div>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 1) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>{a.major}: </b>
+                            {a.answers}
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -90,8 +124,24 @@ class SchoolPage extends Component{
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 2) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>{a.major}: </b>
+                            {a.answers}
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -106,21 +156,53 @@ class SchoolPage extends Component{
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 3) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>{a.major}: </b>
+                            {a.answers}
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
 
             </ExpansionPanelDetails>
           </ExpansionPanel>
-          
+
           <ExpansionPanel>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <div className="school-question" variant="h5">Describe the student body culture (e.g. atmosphere, social dynamics) in the way you experienced it.</div>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <div>
-                <div><b>Answer 1: </b>shivam is cool but not as cool as brian</div>
-                <div><b>Answer 2: </b>saagar is cooler than shivam</div>
+                {
+                this.state.answers.map((a) => {
+                  if(a.id === 4) {
+                return(
+                  <div>
+                    {
+                      a.answer.map((a) => {
+                        return(
+                          <div>
+                            <b>{a.major}: </b>
+                            {a.answers}
+                          </div>
+                        ); })
+                    }
+                  </div>
+                );}
+              })
+              }
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
@@ -166,7 +248,7 @@ class SchoolPage extends Component{
 
             </ExpansionPanelDetails>
           </ExpansionPanel>
-          
+
           <ExpansionPanel>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <div className="school-question" variant="h5">What specific aspect of your school are you most grateful for?</div>
@@ -243,7 +325,7 @@ class SchoolPage extends Component{
 
             </ExpansionPanelDetails>
           </ExpansionPanel>
-          
+
           <ExpansionPanel>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <div className="school-question" variant="h5">What types of resources (e.g. clubs, programs, career fairs) does your school have to help with internships, career planning, and on-campus jobs (e.g. research)?</div>
@@ -267,7 +349,7 @@ class SchoolPage extends Component{
               </div>
             </ExpansionPanelDetails>
           </ExpansionPanel>
-          
+
           <ExpansionPanel>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <div className="school-question" variant="h5">Describe your experience with school facilities (e.g. dining halls, dorms, athletic facilities).</div>
@@ -280,7 +362,7 @@ class SchoolPage extends Component{
 
             </ExpansionPanelDetails>
           </ExpansionPanel>
-          
+
           <ExpansionPanel>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <div className="school-question" variant="h5">Describe the student body culture (e.g. atmosphere, social dynamics) in the way you experienced it.</div>
@@ -329,7 +411,7 @@ class SchoolPage extends Component{
 
             </ExpansionPanelDetails>
           </ExpansionPanel>
-          
+
           <ExpansionPanel>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <div className="school-question" variant="h5">What specific aspect of your school are you most grateful for?</div>
@@ -418,7 +500,7 @@ class SchoolPage extends Component{
         <Tab.Container defaultActiveKey={0} onSelect={this.onSelectTab}>
           <Row>
             <Col sm={2}>
-              <Nav variant="pills" className="flex-column" > 
+              <Nav variant="pills" className="flex-column" >
                 <Nav.Item>
                   <Nav.Link className="question-tabs" eventKey={0}>Academic</Nav.Link>
                 </Nav.Item>
@@ -450,8 +532,8 @@ class SchoolPage extends Component{
               </Tab.Content>
             </Col>
           </Row>
-        </Tab.Container>  
-        
+        </Tab.Container>
+
       </div>
     );
   }

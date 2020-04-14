@@ -18,7 +18,7 @@ const Main = () => (
     //<Route path = "/contact" component={Contact}/>
     <Route path = "/confirmation" component={Confirmation}/>
     //<Route path = "/SchoolList/:school" component={SchoolPage}/>
-    //<Route path = "/SchoolList" component={SchoolList}/>
+    <Route path = "/SchoolList" component={SchoolList}/>
 
     <Route path = "/schoolpage" component={SchoolPage}/>
     <Route path = "/alumni" component={Alumni}/>
