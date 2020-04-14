@@ -7,12 +7,12 @@
 }
 
 .navbar-light .navbar-brand {
-  font-size: 35px;
+  font-size: 3.47vh;
   color: #F6C270 !important;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  font-size: 25px;
+  font-size: 2.47vh;
   color: #F6C270 !important;
 }
 
@@ -364,7 +364,7 @@
 
 .btn.landing-page-button{
   font-family: Heebo;
-  font-size: 30px;
+  font-size: 3vh;
   background-color: #339A9F;
   border-radius: 31px;
   padding: 2% 5% 2% 5%;
@@ -417,7 +417,7 @@
 .landing-page-form-description h3{
   font-family: Heebo;
   font-weight: 100;
-  font-size: 35px;
+  font-size: 3.49vh;
   color: white;
 }
 
@@ -425,7 +425,7 @@
   background-color: white;
   border: 0.2px solid rgb(196, 196, 196) !important;
   padding: 7% 5% 5% 5%;
-  font-size: 19px;
+  font-size: 1.9vh;
 }
 
 .form-control {
@@ -434,7 +434,7 @@
 
 .register h2{
   font-family: Heebo;
-  font-size: 35px;
+  font-size: 3.47vh;
   padding-bottom: 5%;
   color: #EFA885;
 }
@@ -442,7 +442,7 @@
 .btn.register-button{
   background-color: #EFA885;
   border-color: #EFA885;
-  font-size: 20px;
+  font-size: 1.97vh;
   margin-top: 5%;
 }
 
