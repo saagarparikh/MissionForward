@@ -399,14 +399,14 @@
 
 .row.landing-page-form {
   width: 100%;
-  height: 51vh;
-  margin: 7% 0% 15% 0%;
+  height: 64vh;
+  margin: 7% 0% 11% 0%;
   padding: 5% 10.6% 5% 10.6%;
   background-color: #EFA885;
 }
 
 .landing-page-form {
-  margin-bottom: 10%;
+  margin-bottom: 7%;
 }
 
 .landing-page-form-description {
@@ -415,10 +415,16 @@
 }
 
 .landing-page-form-description h3{
+  padding-top: 5%;
   font-family: Heebo;
   font-weight: 100;
   font-size: 3.49vh;
   color: white;
+}
+
+.register-back{
+  width: 25vw;
+  
 }
 
 .register{
