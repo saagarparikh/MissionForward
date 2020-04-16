@@ -13,7 +13,7 @@ class schoolList extends Component{
             schools: [],
         };
 
-        axios.get('http://localhost:5000/alumni-data/get-schools')
+        axios.get('/alumni-data/get-schools')
                 .then(response => {
                   this.setState({
                       schools: response.data.schools
