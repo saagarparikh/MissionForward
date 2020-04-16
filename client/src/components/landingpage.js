@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Register from './register';
-import {Button, Card, Row, Col } from 'react-bootstrap';
+import {Container, Button, Card, Row, Col } from 'react-bootstrap';
 import MainPic from '../img/landing-page-img.jpg';
 import ExperiencePic from '../img/landing-page-experience-img-1.png';
 import ExperiencePic2 from '../img/landing-page-experience-img-2.png';
@@ -11,7 +11,7 @@ import SchoolPic from '../img/landing-page-school-img.png';
 class LandingPage extends Component{
   render() {
     return(
-      <div className="landing-page">
+      <Container fluid className="landing-page">
         <Row className="landing-page-main-page">
           <Col sm={5}>
             <div className="landing-page-text">
@@ -75,7 +75,7 @@ class LandingPage extends Component{
             </Col>
         </Row>
 
-      </div>
+      </Container>
     );
   }
 }

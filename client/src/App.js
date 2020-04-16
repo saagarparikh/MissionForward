@@ -9,7 +9,7 @@ function App() {
   return (
     <HttpsRedirect>
     <div>
-      <Navbar fixed="top">
+      <Navbar colapseOnSelect expand='lg' fixed="top">
         <Navbar.Brand href="/"><b>Mission Forward</b></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
