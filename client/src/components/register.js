@@ -58,7 +58,7 @@ const schema = yup.object({
 							<Form.Label>Email Address</Form.Label>
 							<Form.Control
 								type="input"
-								placeholder="missionfoward@gmail.com"
+								placeholder="fwd.mission@gmail.com"
 								name="email"
 								value={values.email}
 								onChange={handleChange}
