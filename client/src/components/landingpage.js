@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Register from './register';
-import {Button, Card, Row, Col } from 'react-bootstrap';
+import {Button, Card, Row, Col, CardDeck} from 'react-bootstrap';
 import MainPic from '../img/landing-page-img.jpg';
 import ExperiencePic from '../img/landing-page-experience-img-1.png';
 import ExperiencePic2 from '../img/landing-page-experience-img-2.png';
@@ -33,33 +33,29 @@ class LandingPage extends Component{
 
 
 
-        <Row className="landing-page-cards">
-          <Col sm={4}>
+        <Row className="landing-page-cards align-items-stretch">
+          <CardDeck>
             <Card className="landing-page-card">
-              <Card.Img width="10vh" variant="top" src={AlumniPic} />
+              <Card.Img variant="top" src={AlumniPic} />
               <Card.Body>
                 <Card.Title><b>100+ MSJ Class of 2016 Alumni</b></Card.Title>
               </Card.Body>
             </Card>
-          </Col>
 
-          <Col sm={4}>
             <Card className="landing-page-card">
               <Card.Img variant="top" src={SchoolPic} />
               <Card.Body>
                 <Card.Title><b>20+ Supported Universities</b></Card.Title>
               </Card.Body>
             </Card>
-          </Col>
-
-          <Col sm={4}>
+            
             <Card className="landing-page-card">
               <Card.Img variant="top" src={ExperiencePic3} />
               <Card.Body>
                 <Card.Title><b>Learn From First-Hand College Experiences</b></Card.Title>
               </Card.Body>
             </Card>
-          </Col>
+          </CardDeck>
         </Row>
 
 

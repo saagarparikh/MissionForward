@@ -3,7 +3,7 @@ import JsonFile from '../dummySchools.json'
 import school from './schoolPage'
 import { Link, NavLink } from 'react-router-dom';
 import {replace} from 'lodash';
-import {InputGroup, FormControl, Card, Row, Col, Button} from 'react-bootstrap'
+import {InputGroup, FormControl, Card, Row, Col, Button, CardDeck} from 'react-bootstrap'
 import TopCal from '../img/school-logos/uc-berkeley-logo.png';
 import TopUCD from '../img/school-logos/uc-davis-logo.png';
 import TopUCSB from '../img/school-logos/uc-santa-barbara-logo.png';
@@ -80,38 +80,36 @@ class schoolList extends Component{
                 <div className="top-schools-cards-background">
                     <h2>Top Responses From Our Alumni</h2>
                     <Row className="top-schools-cards">
-                        <Col sm={4}>
-                            <Link to={"/schools/" + "University of California-Berkeley"} onClick={this.onClickSchool} style={{textDecoration: 'none'}}>
-                                <Card className="top-schools-card">
-                                    <Card.Img variant="top" src={TopCal} />
+                        <CardDeck>
+                            <Card className="top-schools-card">
+                                <Link to={"/schools/" + "University of California-Berkeley"} onClick={this.onClickSchool} style={{textDecoration: 'none'}}>
+                                    <div>                                    <Card.Img variant="top" src={TopCal} />
+</div>
                                     <Card.Body>
                                         <Card.Title className="top-schools-card-text">University of California-Berkeley</Card.Title>
                                     </Card.Body>
-                                </Card>
-                            </Link>
-                        </Col>
-
-                        <Col sm={4}>
-                            <Link to={"/schools/" + "University of California-Davis"} onClick={this.onClickSchool} style={{textDecoration: 'none'}}>
-                                <Card className="top-schools-card">
+                                </Link>
+                            </Card>
+                           
+                            <Card className="top-schools-card">
+                                <Link to={"/schools/" + "University of California-Davis"} onClick={this.onClickSchool} style={{textDecoration: 'none'}}>
                                     <Card.Img variant="top" src={TopUCD} />
                                     <Card.Body>
                                         <Card.Title className="top-schools-card-text">University of California-Davis</Card.Title>
                                     </Card.Body>
-                                </Card>
-                            </Link>
-                        </Col>
-
-                        <Col sm={4}>
-                            <Link to={"/schools/" + "University of California-Santa Barbara"} onClick={this.onClickSchool} style={{textDecoration: 'none'}}>
-                                <Card className="top-schools-card">
+                                </Link>
+                            </Card>
+                    
+                            <Card className="top-schools-card">
+                                <Link to={"/schools/" + "University of California-Santa Barbara"} onClick={this.onClickSchool} style={{textDecoration: 'none'}}>
                                     <Card.Img variant="top" src={TopUCSB} />
                                     <Card.Body>
                                         <Card.Title className="top-schools-card-text">University of California-Santa Barbara</Card.Title>
                                     </Card.Body>
-                                </Card>
-                            </Link>
-                        </Col>
+                                </Link>
+                            </Card>
+                            
+                        </CardDeck>
                     </Row>
                 </div>
 
