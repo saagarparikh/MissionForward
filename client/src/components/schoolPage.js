@@ -8,7 +8,8 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 import {replace} from 'lodash';
 
-import {Row, Col, Nav, Tab} from 'react-bootstrap'
+import {Row, Col, Nav, Tab, CardDeck, Card, Button} from 'react-bootstrap';
+import {Envelope, Pencil, HouseDoor} from 'react-bootstrap-icons';
 
 import axios from 'axios';
 
@@ -681,6 +682,95 @@ class SchoolPage extends Component{
 
         </div>
       )
+    } else if(this.state.activeTab == 4) {
+      return(
+        <div className="school-contacts">
+          <Row className="school-contact-row">
+            <CardDeck>
+
+            <Card>
+            <Card.Header className="school-contact-name"><b>Shivam Patel</b></Card.Header>
+              <Card.Body>
+                <Card.Text className="school-contact-text">
+                <div> <b>University of California, Irvine</b></div>
+                <div> <Pencil className="school-contact-icon"/> Computer Science, 2020</div> 
+                <div> <Envelope className="school-contact-icon"/> bchou3@uci.edu</div> 
+                </Card.Text>
+                <Button className="school-contact-button">Copy Email</Button>
+              </Card.Body>
+            </Card>
+{/* 
+            <Card>
+            <Card.Header className="school-contact-name"><b>Shivam Patel</b></Card.Header>
+              <Card.Body> 
+                <Card.Text className="school-contact-text">
+                <div> <b>University of California, Irvine</b></div>
+                <div> <Pencil className="school-contact-icon"/> Computer Science, 2020</div> 
+                <div> <Envelope className="school-contact-icon"/> bchou3@uci.edu</div> 
+                </Card.Text>
+                <Button className="school-contact-button">Copy Email</Button>
+              </Card.Body>
+            </Card>
+
+            <Card>
+            <Card.Header className="school-contact-name"><b>Shivam Patel</b></Card.Header>
+              <Card.Body>
+                <Card.Text className="school-contact-text">
+                <div> <b>University of California, Irvine</b></div>
+                <div> <Pencil className="school-contact-icon"/> Computer Science, 2020</div> 
+                <div> <Envelope className="school-contact-icon"/> bchou3@uci.edu</div> 
+                </Card.Text>
+                <Button className="school-contact-button">Copy Email</Button>
+              </Card.Body>
+            </Card> */}
+
+          </CardDeck>       
+        </Row>
+
+        <Row className="school-contact-row">
+            <CardDeck>
+
+            <Card>
+            <Card.Header className="school-contact-name"><b>Shivam Patel</b></Card.Header>
+              <Card.Body>
+                <Card.Text className="school-contact-text">
+                <div> <b>University of California, Irvine</b></div>
+                <div> <Pencil className="school-contact-icon"/> Computer Science, 2020</div> 
+                <div> <Envelope className="school-contact-icon"/> bchou3@uci.edu</div> 
+                </Card.Text>
+                <Button className="school-contact-button">Copy Email</Button>
+              </Card.Body>
+            </Card>
+
+            <Card>
+            <Card.Header className="school-contact-name"><b>Shivam Patel</b></Card.Header>
+              <Card.Body> 
+                <Card.Text className="school-contact-text">
+                <div> <b>University of California, Irvine</b></div>
+                <div> <Pencil className="school-contact-icon"/> Computer Science, 2020</div> 
+                <div> <Envelope className="school-contact-icon"/> bchou3@uci.edu</div> 
+                </Card.Text>
+                <Button className="school-contact-button">Copy Email</Button>
+              </Card.Body>
+            </Card>
+
+            <Card>
+            <Card.Header className="school-contact-name"><b>Shivam Patel</b></Card.Header>
+              <Card.Body>
+                <Card.Text className="school-contact-text">
+                <div> <b>University of California, Irvine</b></div>
+                <div> <Pencil className="school-contact-icon"/> Computer Science, 2020</div> 
+                <div> <Envelope className="school-contact-icon"/> bchou3@uci.edu</div> 
+                </Card.Text>
+                <Button className="school-contact-button">Copy Email</Button>
+              </Card.Body>
+            </Card>
+
+          </CardDeck>       
+        </Row>
+
+        </div>
+      )
     }
   }
 
@@ -705,6 +795,9 @@ class SchoolPage extends Component{
                 <Nav.Item>
                   <Nav.Link className="question-tab" eventKey={3}>View All</Nav.Link>
                 </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link className="question-tab" eventKey={4}>Contacts</Nav.Link>
+                </Nav.Item>
               </Nav>
             </Col>
             <Col className="school-questions"sm={9}>
@@ -719,6 +812,9 @@ class SchoolPage extends Component{
                   {this.toggleCategories()}
                 </Tab.Pane>
                 <Tab.Pane eventKey={3}>
+                  {this.toggleCategories()}
+                </Tab.Pane>
+                <Tab.Pane eventKey={4}>
                   {this.toggleCategories()}
                 </Tab.Pane>
               </Tab.Content>

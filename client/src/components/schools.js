@@ -83,8 +83,7 @@ class schoolList extends Component{
                         <CardDeck>
                             <Card className="top-schools-card">
                                 <Link to={"/schools/" + "University of California-Berkeley"} onClick={this.onClickSchool} style={{textDecoration: 'none'}}>
-                                    <div>                                    <Card.Img variant="top" src={TopCal} />
-</div>
+                                    <Card.Img variant="top" src={TopCal} />
                                     <Card.Body>
                                         <Card.Title className="top-schools-card-text">University of California-Berkeley</Card.Title>
                                     </Card.Body>
