@@ -22,6 +22,7 @@
     "react-alert": "^7.0.0",
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
+    "react-ga": "^2.7.0",
     "react-https-redirect": "^1.1.0",
     "react-mdl": "^2.1.0",
     "react-router-dom": "^5.1.2",

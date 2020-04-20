@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Main from './components/main'
 import { Link } from 'react-router-dom';
 import {Navbar, Nav} from 'react-bootstrap';
 import HttpsRedirect from 'react-https-redirect';
+import ReactGa from 'react-ga';
 
 function App() {
+
+  useEffect(() => {
+    ReactGa.initialize('UA-163790745-1')
+
+    //report page view
+    ReactGa.pageview(window.location.pathname + window.location.search)
+  }, [])
+
   return (
     <HttpsRedirect>
     <div>
