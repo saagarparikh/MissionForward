@@ -124,19 +124,22 @@
 }
 
 .row.landing-page-main-page {
-  height: 80vh;
-  margin: 0% 12% 5% 10.6%;
+  /* height: 80vh; */
+  margin: 0% 12% 9% 10.6%;
   overflow: hidden;
 }
 
-.landing-page-pic {
-  height: 55vh;
-  margin-top: 20%;
-  padding-left: 9%;
+.landing-page-pic-border.col-sm-7 {
+  margin-top: 13%;
 }
 
-.landing-page-text {
-  margin-top: 52%;
+.landing-page-pic {
+  width: 43.5vw;
+
+}
+
+.landing-page-text.col-sm-5 {
+  margin-top: 22%;
 }
 
 .landing-page-text h3{
@@ -415,6 +418,7 @@
 .school-question-boxes{
   padding: 3% 18% 3% 0%;
 }
+
 
 .row.school-contact-row {
   width: 100%;

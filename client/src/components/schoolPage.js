@@ -727,48 +727,6 @@ class SchoolPage extends Component{
           </CardDeck>       
         </Row>
 
-        <Row className="school-contact-row">
-            <CardDeck>
-
-            <Card>
-            <Card.Header className="school-contact-name"><b>Shivam Patel</b></Card.Header>
-              <Card.Body>
-                <Card.Text className="school-contact-text">
-                <div> <b>University of California, Irvine</b></div>
-                <div> <Pencil className="school-contact-icon"/> Computer Science, 2020</div> 
-                <div> <Envelope className="school-contact-icon"/> bchou3@uci.edu</div> 
-                </Card.Text>
-                <Button className="school-contact-button">Copy Email</Button>
-              </Card.Body>
-            </Card>
-
-            <Card>
-            <Card.Header className="school-contact-name"><b>Shivam Patel</b></Card.Header>
-              <Card.Body> 
-                <Card.Text className="school-contact-text">
-                <div> <b>University of California, Irvine</b></div>
-                <div> <Pencil className="school-contact-icon"/> Computer Science, 2020</div> 
-                <div> <Envelope className="school-contact-icon"/> bchou3@uci.edu</div> 
-                </Card.Text>
-                <Button className="school-contact-button">Copy Email</Button>
-              </Card.Body>
-            </Card>
-
-            <Card>
-            <Card.Header className="school-contact-name"><b>Shivam Patel</b></Card.Header>
-              <Card.Body>
-                <Card.Text className="school-contact-text">
-                <div> <b>University of California, Irvine</b></div>
-                <div> <Pencil className="school-contact-icon"/> Computer Science, 2020</div> 
-                <div> <Envelope className="school-contact-icon"/> bchou3@uci.edu</div> 
-                </Card.Text>
-                <Button className="school-contact-button">Copy Email</Button>
-              </Card.Body>
-            </Card>
-
-          </CardDeck>       
-        </Row>
-
         </div>
       )
     }

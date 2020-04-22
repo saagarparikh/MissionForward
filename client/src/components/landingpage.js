@@ -13,8 +13,7 @@ class LandingPage extends Component{
     return(
       <div className="landing-page">
         <Row className="landing-page-main-page">
-          <Col sm={5}>
-            <div className="landing-page-text">
+          <Col sm={5} className="landing-page-text">
               <h3>Welcome to</h3>
               <h1><b>Mission</b></h1>
               <h2>Forward</h2>
@@ -23,15 +22,12 @@ class LandingPage extends Component{
               </h5>
               <Button className="landing-page-button" href="#join-us"><b>Join Us</b></Button>
 
-            </div>
           </Col>
-          <Col sm={7}>
+          <Col sm={7} className="landing-page-pic-border">
             <img className="landing-page-pic" src={MainPic}/>
             {/* <a href="https://www.vecteezy.com/free-vector/college">College Vectors by Vecteezy</a> */}
           </Col>
         </Row>
-
-
 
         <Row className="landing-page-cards align-items-stretch">
           <CardDeck>
