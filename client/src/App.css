@@ -125,7 +125,7 @@
 
 .row.landing-page-main-page {
   /* height: 80vh; */
-  margin: 0% 12% 9% 10.6%;
+  padding: 0% 12% 9% 10.6%;
   overflow: hidden;
 }
 
@@ -144,19 +144,19 @@
 
 .landing-page-text h3{
   font-family: Heebo;
-  font-size: 3vh;
+  font-size: 1.6vw;
   font-weight: 300;
 }
 
 .landing-page-text h1{
   font-family: Heebo;
-  font-size: 8vh;
+  font-size: 4.46vw;
   display: inline;
 }
 
 .landing-page-text h2{
   font-family: Heebo;
-  font-size: 8vh;
+  font-size: 4.46vw;
   font-weight: 300;
   display: inline;
 }
@@ -164,13 +164,13 @@
 .landing-page-text h5{
   font-family: Heebo;
   margin-bottom:10%;
-  font-size: 2.4vh;
+  font-size: 1.39vw;
   font-weight: 100;
 }
 
 .btn.landing-page-button{
   font-family: Heebo;
-  font-size: 3vh;
+  font-size: 1.6vw;
   background-color: #339A9F;
   border-radius: 31px;
   padding: 2% 5% 2% 5%;
@@ -219,21 +219,19 @@
 }
 
 .landing-page-form-description {
-  padding-top: 5%;
-  height: 10vh;
+  padding-top: 10%;
 }
 
 .landing-page-form-description h3{
-  padding-top: 5%;
   font-family: Heebo;
   font-weight: 100;
-  font-size: 3.49vh;
+  font-size: 1.96vw;
   color: white;
 }
 
 .register-back{
   width: 25vw;
-  
+
 }
 
 .register{
