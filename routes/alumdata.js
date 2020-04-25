@@ -27,10 +27,7 @@ const alumDataSchema = new Schema({
 });
 
 router.route('/get-schools').get((req, res) =>{
-  const currAlumDataRef = mongoose.model("Brown University", alumDataSchema);
   var schools = [];
-  const yeah= mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}
-  );
   const connection = mongoose.connection;
   connection.once('open', function () {
       connection.db.listCollections().toArray(function (err, names) {
@@ -118,9 +115,60 @@ router.route('/get-school-data').get((req, res) => {
 })
 
 
+function getContactData(data){
+  ret_data = {};
+  ret_data["name"] = data["name"];
+  if(data["name"] == ""){
+    ret_data["name"] = "Anonymous";
+  }
+  ret_data["school"] = data["school"];
+  ret_data["email"] = data["email"];
+  ret_data["grad"] = data["grad"];
+  ret_data["major"] = data["major"];
+  if(data["minor"] == ""){
+    ret_data["minor"] = "N/A";
+  }else{
+    ret_data["minor"] = data["minor"];
+  }
+  return ret_data;
+}
+
+function compare( a, b ) {
+  if ( a["name"] < b["name"] ){
+    return -1;
+  }
+  if ( a["name"] > b["name"] ){
+    return 1;
+  }
+  return 0;
+}
 
 
+router.route('/get-school-contacts').get((req, res) => {
+  const school = req.query.school;
+  const SchoolAlumData = mongoose.model(school, alumDataSchema);
+  var contacts = [];
 
+  SchoolAlumData.find({  })
+    .then((data) => {
+        for(var i in data){
+          if((data[i]["anon"] == "No" || data[i]["anon"] == "no") && data[i]["name"] != ""){
+            contacts.push(getContactData(data[i]));
+          }
+        }
+        contacts.sort(compare)
+        for(var i in data){
+          if((data[i]["anon"] == "No" || data[i]["anon"] == "no") && data[i]["name"] == ""){
+            contacts.push(getContactData(data[i]));
+          }
+        }
+        var result = {contacts: contacts};
+        res.json(result);
+    })
+    .catch((error) => {
+        console.log('error: ', error);
+    });
+})
 
 
 router.route('/add').post((req, res) => {

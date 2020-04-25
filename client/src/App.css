@@ -428,6 +428,9 @@
   display:block;
 }
 
+.contact-card{
+  height: 100%;
+}
 .school-contact-text div{
  font-size: 0.8vw !important;
 }
