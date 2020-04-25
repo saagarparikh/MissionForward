@@ -7,8 +7,9 @@ import { Grid, Cell} from 'react-mdl';
 
 import {replace} from 'lodash';
 
-import {Row, Col, Nav, Tab, CardDeck, Card, Button} from 'react-bootstrap';
-import {Envelope, Pencil, HouseDoor} from 'react-bootstrap-icons';
+import {Row, Col, Nav, Tab, CardDeck, Card, Button, Modal, show, handleClose} from 'react-bootstrap';
+import {Envelope, Pencil, CheckCircle} from 'react-bootstrap-icons';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 import axios from 'axios';
 
@@ -21,6 +22,8 @@ class SchoolPage extends Component{
       school: '',
       answers: [],
       contacts: [],
+      copied: false,
+      email: ''
     };
     this.onSelectTab = this.onSelectTab.bind(this);
   }
@@ -61,13 +64,18 @@ class SchoolPage extends Component{
             });;
   }
 
-
-
   onSelectTab (tabID) {
     console.log(tabID);
     this.setState({
       activeTab: tabID
   });
+  }
+
+  toggleModal=(email)=> {
+    this.setState({
+      copied: ! this.state.copied,
+      email: email
+    })
   }
 
   toggleCategories() {
@@ -698,11 +706,11 @@ class SchoolPage extends Component{
     } else if(this.state.activeTab == 4) {
       return(
         <div className="school-contacts">
-          <Grid>
+          <Grid className="contact-grid">
             {
               this.state.contacts.map((c) => {
                 return(
-                  <Cell col={4}>
+                  <Cell className="contact-cell">
                     <Card className = "contact-card">
                     <Card.Header className="school-contact-name"><b>{c.name}</b></Card.Header>
                       <Card.Body>
@@ -711,7 +719,10 @@ class SchoolPage extends Component{
                         <div> <Pencil className="school-contact-icon"/> {c.major}, {c.grad}</div>
                         <div> <Envelope className="school-contact-icon"/> {c.email}</div>
                         </Card.Text>
-                        <Button className="school-contact-button">Copy Email</Button>
+                        <CopyToClipboard text={c.email}>
+                          <Button className="school-contact-button" onClick={()=>this.toggleModal(c.email)}>Copy Email</Button>
+                        </CopyToClipboard>
+                        
                       </Card.Body>
                     </Card>
                   </Cell>
@@ -719,6 +730,12 @@ class SchoolPage extends Component{
                 ); })
             }
           </Grid>
+          <Modal show={this.state.copied} animation={true} keyboard={true} onHide={()=>this.toggleModal("")} >        
+            <Modal.Header closeButton={true}>
+              <Modal.Title><CheckCircle className="copied-icon"/> Email Copied!</Modal.Title>
+            </Modal.Header>
+              <Modal.Body><b>{this.state.email}</b> has been added to your clipboard</Modal.Body>
+          </Modal>
         </div>
       )
     }
@@ -731,7 +748,7 @@ class SchoolPage extends Component{
 
         <Tab.Container className="category-tabs" defaultActiveKey={0} onSelect={this.onSelectTab}>
           <Row>
-            <Col className="question-tabs">
+            <Col md={2} className="question-tabs">
               <Nav variant="pills" className="flex-column" >
                 <Nav.Item>
                   <Nav.Link className="question-tab" eventKey={0}>Academic</Nav.Link>

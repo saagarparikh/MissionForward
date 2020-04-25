@@ -21,26 +21,6 @@
   margin-left: 2vw !important;
 }
 
-/* .col-sm-2 {
-  padding-left: 0% !important;
-}
-.col-sm-3 {
-  padding-left: 0% !important;
-}
-.col-sm-4 {
-  padding-left: 0% !important;
-}
-
-.col-sm-5 {
-  padding-left: 0% !important;
-}
-.col-sm-6 {
-  padding-left: 0% !important;
-}
-.col-sm-7 {
-  padding-left: 0% !important;
-} */
-
 .page-content{
   padding-top: 3%;
 }
@@ -389,23 +369,19 @@
 
 .school-page {
   padding-top: 7%;
+  margin-left: 10.7%;
 }
 
 .school-title {
   font-family: Heebo;
   font-size: 80px;
-  padding-left: 10.6%;
+  /* padding-left: 10.6%; */
   color: #5583A6;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link, .nav-pills .nav-link:hover {
   background-color: #5583A6 !important;
   color: white;
-}
-
-.question-tabs {
-  margin-left:10.6%;
-  /* margin-top: 3%; */
 }
 
 .question-tab{
@@ -417,30 +393,46 @@
   padding: 3% 18% 3% 0%;
 }
 
+.contact-grid {
+  margin-top: 2% !important;
+  margin-right: 5% !important;
+  padding-bottom: 5% !important;
+}
 
-.row.school-contact-row {
-  width: 100%;
-  margin: 0% 0% 0% 0%;
-  padding: 5% 9.6% 0% 2%;
-
-  margin-left:auto;
-  margin-right:auto;
-  display:block;
+.contact-cell {
+  margin-bottom: 3% !important;
 }
 
 .contact-card{
   height: 100%;
+  margin-left: 2%;
+  margin-right: 2%;
 }
+
+.modal-backdrop.show {
+  opacity: 0.3 !important;
+}
+
+.modal-content {
+  border: none !important;
+}
+
 .school-contact-text div{
- font-size: 0.8vw !important;
+ font-size: 15px !important;
 }
 
 .school-contact-icon {
   padding-right: 1%
 }
 
+.copied-icon {
+  color: rgb(84, 133, 11);
+  padding-right: 1%;
+  font-size: 130%;
+}
+
 .card-header.school-contact-name {
-  font-size: 1.2vw;
+  font-size: 21.5px;
   background-color: #5583A6;
   color: white;
 }
