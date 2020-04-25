@@ -34,14 +34,14 @@ class LandingPage extends Component{
             <Card className="landing-page-card">
               <Card.Img variant="top" src={AlumniPic} />
               <Card.Body>
-                <Card.Title><b>100+ MSJ Class of 2016 Alumni</b></Card.Title>
+                <Card.Title><b>100+ MSJ Alumni Responses</b></Card.Title>
               </Card.Body>
             </Card>
 
             <Card className="landing-page-card">
               <Card.Img variant="top" src={SchoolPic} />
               <Card.Body>
-                <Card.Title><b>20+ Supported Universities</b></Card.Title>
+                <Card.Title><b>25+ Supported Universities</b></Card.Title>
               </Card.Body>
             </Card>
             
