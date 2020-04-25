@@ -50,7 +50,7 @@ class SchoolPage extends Component{
             .catch((error) => {
               console.log(error);
             });;
-    axios.get('http://localhost:5000/alumni-data/get-school-contacts', {
+    axios.get('/alumni-data/get-school-contacts/', {
       params:{
         school: school
       }
@@ -97,7 +97,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -128,7 +128,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -158,7 +158,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -192,7 +192,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -223,7 +223,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -253,7 +253,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -288,7 +288,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -319,7 +319,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -349,7 +349,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -379,7 +379,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -413,7 +413,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -444,7 +444,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -474,7 +474,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -504,7 +504,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -535,7 +535,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -565,7 +565,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -595,7 +595,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -626,7 +626,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -656,7 +656,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -686,7 +686,7 @@ class SchoolPage extends Component{
                       a.answer.map((a) => {
                         return(
                           <div>
-                            <b>Major: </b> {a.major}, {a.co}
+                            <b>Major: </b> {a.major}
                             <p> <b>Response: </b>{a.answers}</p>
                             <p></p>
                             <hr></hr>
@@ -722,7 +722,7 @@ class SchoolPage extends Component{
                         <CopyToClipboard text={c.email}>
                           <Button className="school-contact-button" onClick={()=>this.toggleModal(c.email)}>Copy Email</Button>
                         </CopyToClipboard>
-                        
+
                       </Card.Body>
                     </Card>
                   </Cell>
@@ -730,7 +730,7 @@ class SchoolPage extends Component{
                 ); })
             }
           </Grid>
-          <Modal show={this.state.copied} animation={true} keyboard={true} onHide={()=>this.toggleModal("")} >        
+          <Modal show={this.state.copied} animation={true} keyboard={true} onHide={()=>this.toggleModal("")} >
             <Modal.Header closeButton={true}>
               <Modal.Title><CheckCircle className="copied-icon"/> Email Copied!</Modal.Title>
             </Modal.Header>
