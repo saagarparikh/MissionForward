@@ -27,6 +27,7 @@ const alumDataSchema = new Schema({
 });
 
 router.route('/get-schools').get((req, res) =>{
+  const yeah= mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
   var schools = [];
   const connection = mongoose.connection;
   connection.once('open', function () {
@@ -43,7 +44,7 @@ router.route('/get-schools').get((req, res) =>{
         }
       });
   });
-});
+})
 
 function getMetaData(data, q_id){
   var result = {major: data["major"], co: data["grad"], answers: data[q_id]};
