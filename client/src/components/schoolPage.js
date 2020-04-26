@@ -65,10 +65,10 @@ class SchoolPage extends Component{
   }
 
   onSelectTab (tabID) {
-    console.log(tabID);
     this.setState({
       activeTab: tabID
   });
+  console.log(this.state.activeTab);
   }
 
   toggleModal=(email)=> {
@@ -79,7 +79,7 @@ class SchoolPage extends Component{
   }
 
   toggleCategories() {
-    if(this.state.activeTab === 0) {
+    if(this.state.activeTab == 0) {
       return(
         <div className="school-question-boxes">
           <ExpansionPanel>
