@@ -253,6 +253,41 @@
   padding-bottom: 5%;
 }
 
+.schools-request {
+  width: 166px;
+  border:0.5px solid rgb(224, 224, 224);
+  border-radius: 5px !important;
+  right: 40px;
+  bottom: 40px;
+  background-color:#EFA885;
+  display: flex;
+  position: fixed;
+}
+
+.btn.schools-request-button {
+  font-family: Heebo;
+  font-size: 15px;
+  background-color: #EFA885 !important;
+  border: none;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding-left: 0;
+  margin-right: 0%;
+}
+
+.schools-request-icon-back {
+  border-radius: 10%;
+  margin: 4% 7% 4% 4%;
+  background-color: white;
+  padding: 1% 4% 0% 3%;
+}
+
+.schools-request-info-icon {
+  color: #EFA885;
+  font-size: 130%;
+  margin: 8% 0% 5% 6%;
+}
+
 .schools-title {
   font-family: Heebo;
   padding-top: 10%;
@@ -583,8 +618,9 @@
 /* -----------------------CONTACT PAGE--------------------------- */
 
 .contact-page {
-  margin: 10.6% 10.6% 5% 10.6%;
-  justify-content: space-evenly
+  margin: 0% 10.6% 0% 10.6%;
+  padding-top: 8.6%;
+  justify-content: space-evenly;
 }
 
 .contact-page-text {
@@ -602,10 +638,6 @@
   font-size: 30px;
   font-weight: 200;
 }
-
-/* .contact-page-form.col-md-5 {
-  margin-left: 5%;
-} */
 
 .contact-page-form {
   position: right;
