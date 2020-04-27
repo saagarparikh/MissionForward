@@ -3,8 +3,9 @@ import JsonFile from '../dummySchools.json'
 import school from './schoolPage'
 import { Link, NavLink } from 'react-router-dom';
 import {replace} from 'lodash';
-import {InputGroup, FormControl, Card, Row, Col, Button, CardDeck} from 'react-bootstrap'
+import {InputGroup, FormControl, Card, Row, Col, Button, CardDeck, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import TopCal from '../img/school-logos/uc-berkeley-logo.png';
+import {InfoCircle} from 'react-bootstrap-icons'
 import TopUCD from '../img/school-logos/uc-davis-logo.png';
 import TopUCSB from '../img/school-logos/uc-santa-barbara-logo.png';
 
@@ -53,6 +54,14 @@ class schoolList extends Component{
             curr_school: e.target.text,
         });
     };
+
+    onToolTip = (props) => {
+        return(
+            <Tooltip {...props}>
+                If your school is not listed, reach out to us and let us know by clicking on the right!
+            </Tooltip>
+        );
+    }
 
     render() {
         this.iterateSchools();
@@ -123,6 +132,23 @@ class schoolList extends Component{
                         );
                     })}
                 </div>
+
+                <div className="schools-request">
+                    <OverlayTrigger
+                        placement="left"
+                        overlay={this.onToolTip}
+                    >  
+                        <div className="schools-request-icon-back">
+                            <InfoCircle className="schools-request-info-icon"/>
+                        </div>
+                    </OverlayTrigger>
+
+                    
+                    <Link to={"/contact"} onClick={this.onClickSchool} style={{textDecoration: 'none'}}>
+                        <Button className="schools-request-button">Request School</Button>
+                    </Link>
+                </div>
+
             </div>
         );
     }
