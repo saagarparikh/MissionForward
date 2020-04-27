@@ -584,6 +584,7 @@
 
 .contact-page {
   margin: 10.6% 10.6% 5% 10.6%;
+  justify-content: space-evenly
 }
 
 .contact-page-text {
@@ -602,10 +603,43 @@
   font-weight: 200;
 }
 
+/* .contact-page-form.col-md-5 {
+  margin-left: 5%;
+} */
+
 .contact-page-form {
-  padding: 0% 5% 0% 5% !important;
+  position: right;
+  width: 100% !important;
+  font-family: Heebo !important;
+  font-size: 1.8vh;
+  font-weight: 600;
+  color: white;
 }
 
+.btn.contact-button {
+  background-color: #5583A6;
+  font-weight: 600;
+  color:white;
+  border: none;
+}
+
+.btn.contact-button:hover {
+  background-color: white;
+  font-weight: 600;
+  color:#5583A6;
+  border: none;
+}
+
+.contact-email {
+  color: #5583A6;
+  font-weight: 300;
+}
+
+.contact-back{
+  background-color: rgb(116, 162, 197);
+  padding: 5%;
+  border-radius: 2%;
+}
 
 
 /* -------------------------------------------------------------- */
