@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
-import {Row, Col, Form, Button} from 'react-bootstrap'
+import {Row, Col, Form, Button, Container} from 'react-bootstrap'
 
 class Contact extends Component{
   render() {
     return(
       <div className="contact-page">
         <Row className>
-          <Col className="contact-page-text">
+          <Col md={6} className="contact-page-text">
               <h1><b>Contact Us</b></h1>
               <h3>Do you have any questions or concerns? Is the school you 
                   want to learn more about not listed in our schools page?
                   We welcome them! Feel free to contact us! Fill out our 
-                  contact form or email us at fwd.mission@gmail.com! 
+                  contact form or email us at <span className="contact-email">fwd.mission@gmail.com</span>! 
               </h3>
           </Col>
-          <Col className="contact-page-form">
+          <Col md={{span:5,offset:1}} className="contact-page-form">
+            <div className="contact-back">
             <Form>
               <Form.Group>
                 <Form.Label>Full Name</Form.Label>
@@ -44,8 +45,9 @@ class Contact extends Component{
               </Form.Group>
             </Form>
             <Button className="contact-button" type="submit">
- 							Sign Up
+ 							Submit
  						</Button>	
+             </div>
           </Col>
         </Row>
       </div>
