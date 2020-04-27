@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {Row, Col, Form, Button, Container} from 'react-bootstrap'
+import {Row, Col, Form, Button, Container, Modal} from 'react-bootstrap'
 import axios from 'axios';
+import {CheckCircle} from 'react-bootstrap-icons'
 
 class Contact extends Component{
   constructor(props) {
@@ -9,7 +10,8 @@ class Contact extends Component{
       contact_name : "",
       contact_email : "",
       contact_request : "",
-      validated: false
+      validated: false,
+      submit_success: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -18,6 +20,15 @@ class Contact extends Component{
     this.setState({
       validated: value
     });
+  }
+
+  toggleModal=()=> {
+    this.setState({
+      submit_success: ! this.state.submit_success,
+    })
+    if (this.state.submit_success === true) {
+      window.location.reload()
+    }
   }
 
   handleSubmit = (event) => {
@@ -33,10 +44,13 @@ class Contact extends Component{
         user_email : this.state.contact_email,
         user_request : this.state.contact_request
       }
+      
       axios.post('http://localhost:5000/contact/contact-form', contactFormData)
         .then(res => console.log(res.data)).catch((error) => {
                       console.log(error)
                     });
+      event.preventDefault();
+      this.toggleModal();      
     }
   }
 
@@ -113,6 +127,13 @@ class Contact extends Component{
              </div>
           </Col>
         </Row>
+        <Modal show={this.state.submit_success} animation={true} keyboard={true} onHide={()=>this.toggleModal()} >
+            <Modal.Header closeButton={true}>
+              <Modal.Title><CheckCircle className="copied-icon"/> Email Sent!</Modal.Title>
+            </Modal.Header>
+              <Modal.Body>Hello <b>{this.state.contact_name}</b>, we have received your email and a confirmation has been sent to <b>{this.state.contact_email}</b>. Someone from our team will reach out to you soon! 
+              </Modal.Body>
+          </Modal>
       </div>
     );
   }
