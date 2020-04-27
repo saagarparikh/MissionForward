@@ -90,6 +90,12 @@
   font-family: Heebo;
   font-size: 20px;
   background-color: rgb(87, 133, 61);
+  border: rgb(87, 133, 61);
+}
+
+.btn.alumni-form-submit:hover{
+  background-color: rgb(112, 172, 77);
+  border-color: rgb(112, 172, 77);
 }
 
 /* ---------------------------------------------------------------- */
@@ -257,7 +263,6 @@
 
 .schools-title h1{
   font-size: 8.8vh;
-  /* font-size: 4.47vw; */
 }
 
 .schools-title h5{
@@ -574,6 +579,37 @@
 }
 
 /* -------------------------------------------------------------- */
+
+/* -----------------------CONTACT PAGE--------------------------- */
+
+.contact-page {
+  margin: 10.6% 10.6% 5% 10.6%;
+}
+
+.contact-page-text {
+  padding-bottom: 33%;
+}
+
+.contact-page-text h1{
+  font-family: Heebo;
+  font-size: 100px;
+  padding-bottom: 2%;
+}
+
+.contact-page-text h3{
+  font-family: Heebo;
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.contact-page-form {
+  padding: 0% 5% 0% 5% !important;
+}
+
+
+
+/* -------------------------------------------------------------- */
+
 
 .form-wrapper {
   width: 400px;

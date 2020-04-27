@@ -20,7 +20,6 @@ const Main = () => (
     <Route path = "/schools/:school" component={SchoolPage}/>
     <Route path = "/schools" component={Schools}/>
 
-    <Route path = "/schools" component={Schools}/>
     <Route path = "/alumni" component={Alumni}/>
     <Route path = "/alum-confirm" component={AlumConfirmation}/>
   </Switch>
