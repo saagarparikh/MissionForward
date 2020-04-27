@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
+const nodemailer = require('nodemailer')
 
 require('dotenv').config();
 
@@ -21,9 +22,11 @@ connection.once('open', () => {
 
 const alumniDataRouter = require('./routes/alumdata');
 const schoolsRouter = require('./routes/schools');
+const contactRouter = require('./routes/contact');
 
 app.use('/alumni-data', alumniDataRouter);
 app.use('/schools', schoolsRouter);
+app.use('/contact', contactRouter);
 
 if(process.env.NODE_ENV === 'production'){
   app.use(express.static('client/build'));
