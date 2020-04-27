@@ -24,8 +24,22 @@ router.route('/contact-form').post((req, res) =>{
     subject: 'Contact Form Request',
     text: `${user_name} (${user_email}) says: ${user_request}`
   }
+  console.log(user_email);
+  const confirmOpts = {
+    from: "fwd.mission@gmail.com",
+    to: user_email,
+    subject: 'Mission Forward - Contact Form Confirmation',
+    text: "Thank you for reaching out! Someone from our team will be in contact with you as soon as possible. :)"
+  }
 
   smtpTrans.sendMail(mailOpts, (error, response) => {
+    if (error) {
+      console.log(error);
+      res.json(error);
+    }
+  })
+
+  smtpTrans.sendMail(confirmOpts, (error, response) => {
     if (error) {
       console.log(error);
       res.json(error);
