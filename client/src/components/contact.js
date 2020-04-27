@@ -44,13 +44,13 @@ class Contact extends Component{
         user_email : this.state.contact_email,
         user_request : this.state.contact_request
       }
-      
-      axios.post('http://localhost:5000/contact/contact-form', contactFormData)
+
+      axios.post('/contact/contact-form/', contactFormData)
         .then(res => console.log(res.data)).catch((error) => {
                       console.log(error)
                     });
       event.preventDefault();
-      this.toggleModal();      
+      this.toggleModal();
     }
   }
 
@@ -131,7 +131,7 @@ class Contact extends Component{
             <Modal.Header closeButton={true}>
               <Modal.Title><CheckCircle className="copied-icon"/> Email Sent!</Modal.Title>
             </Modal.Header>
-              <Modal.Body>Hello <b>{this.state.contact_name}</b>, we have received your email and a confirmation has been sent to <b>{this.state.contact_email}</b>. Someone from our team will reach out to you soon! 
+              <Modal.Body>Hello <b>{this.state.contact_name}</b>, we have received your email and a confirmation has been sent to <b>{this.state.contact_email}</b>. Someone from our team will reach out to you soon!
               </Modal.Body>
           </Modal>
       </div>

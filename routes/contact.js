@@ -24,7 +24,7 @@ router.route('/contact-form').post((req, res) =>{
     subject: 'Contact Form Request',
     text: `${user_name} (${user_email}) says: ${user_request}`
   }
-  console.log(user_email);
+
   const confirmOpts = {
     from: "fwd.mission@gmail.com",
     to: user_email,
