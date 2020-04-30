@@ -256,12 +256,11 @@
 }
 
 .schools-request {
-  width: 10%;
-  height: 5%;
-  border: 5% solid rgb(224, 224, 224);
+  width: 166px;
+  border:0.5px solid rgb(224, 224, 224);
   border-radius: 5px !important;
-  right: 2%;
-  bottom: 2%;
+  right: 40px;
+  bottom: 40px;
   background-color:#EFA885;
   display: flex;
   position: fixed;
@@ -269,7 +268,7 @@
 
 .btn.schools-request-button {
   font-family: Heebo;
-  font-size: .8vw;
+  font-size: 15px;
   background-color: #EFA885 !important;
   border: none;
   margin-top: 5%;
@@ -283,14 +282,12 @@
   margin: 4% 7% 4% 4%;
   background-color: white;
   padding: 1% 4% 0% 3%;
-  align-items: center;
 }
 
 .schools-request-info-icon {
   color: #EFA885;
   font-size: 130%;
   margin: 8% 0% 5% 6%;
-  align-items: center;
 }
 
 .schools-title {
@@ -750,6 +747,7 @@
   font-size: 1.8vh;
   font-weight: 600;
   color: white;
+  padding-bottom: 5%;
 }
 
 .btn.contact-button {
