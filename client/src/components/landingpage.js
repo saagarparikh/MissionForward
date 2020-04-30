@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Register from './register';
 import {Button, Card, Row, Col, CardDeck} from 'react-bootstrap';
-import MainPic from '../img/landing-page-img.jpg';
-import ExperiencePic from '../img/landing-page-experience-img-1.png';
-import ExperiencePic2 from '../img/landing-page-experience-img-2.png';
-import ExperiencePic3 from '../img/landing-page-experience-img-3.png';
-import AlumniPic from '../img/landing-page-alumni-img.png';
-import SchoolPic from '../img/landing-page-school-img.png';
+import MainPic from '../img/landing-page/landing-page-img.jpg';
+import ExperiencePic from '../img/landing-page/landing-page-experience-img-1.png';
+import ExperiencePic2 from '../img/landing-page/landing-page-experience-img-2.png';
+import ExperiencePic3 from '../img/landing-page/landing-page-experience-img-3.png';
+import AlumniPic from '../img/landing-page/landing-page-alumni-img.png';
+import SchoolPic from '../img/landing-page/landing-page-school-img.png';
 
 class LandingPage extends Component{
   render() {

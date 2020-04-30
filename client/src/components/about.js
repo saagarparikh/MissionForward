@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import {Row, Col} from 'react-bootstrap';
-import CollegeChart from '../img/about-college-chart.png';
-import HSChart from '../img/about-hs-chart.png';
+import {Row, Col, Button} from 'react-bootstrap';
+import {SocialMediaIconsReact} from 'social-media-icons-react';
+import CollegeChart from '../img/about-charts/about-college-chart.png';
+import HSChart from '../img/about-charts/about-hs-chart.png';
+import BrianPic from '../img/members/brian-pic.png';
+import SaagarPic from '../img/members/saagar-pic.jpg';
+import ShivamPic from '../img/members/shivam-pic.png';
 
 class About extends Component{
   render() {
@@ -14,7 +18,88 @@ class About extends Component{
               can’t visit colleges they’re considering attending and are looking to secondary sources of information to aid 
               their decision. We hope that our tool helps you with that!
           </h3> 
+          <div className="about-team-button-div">
+            <Button className="about-team-button" href="#team">Meet the Team</Button>
+          </div>
         </div>
+
+        <div id="team" className="about-team">
+          <h1><b>The Team</b></h1>
+        
+          <Row className="about-member-pics">
+            <Col md={4} className="about-member-info">
+              <img className="about-member-pic" src={BrianPic}></img>
+              <div className="about-member-text">
+                <h3><b>Brian Chou</b></h3>
+                <h4>University of California, Irvine</h4>
+                <h4>Computer Science, 2020</h4>
+                <div className="about-socials">
+                  <div className="about-social">
+                    <SocialMediaIconsReact borderColor="#007FB4" borderWidth="0" borderStyle="solid" 
+                                        icon="linkedin" iconColor="white" backgroundColor="#007FB4" 
+                                        iconSize="1" roundness="50%" size="40" 
+                                        url="https://www.linkedin.com/in/brianchou121/"/>
+                  </div>
+                  <div className="about-social">
+                    <SocialMediaIconsReact borderColor="#3C719D" borderWidth="0" borderStyle="solid" 
+                                        icon="instagram" iconColor="white" backgroundColor="#3C719D" 
+                                        iconSize="1" roundness="50%" size="40" 
+                                        url="https://www.instagram.com/bchouz/"/>
+                  </div>
+                </div>
+
+              </div>
+            </Col>
+
+            <Col md={4} className="about-member-info">
+              <img className="about-member-pic" src={SaagarPic}></img>
+              <div className="about-member-text">
+                <h3><b>Saagar Parikh</b></h3>
+                <h4>University of California, Santa Barbara</h4>
+                <h4>Computer Science, 2020</h4>
+                <div className="about-socials">
+                  <div className="about-social">
+                    <SocialMediaIconsReact borderColor="#007FB4" borderWidth="0" borderStyle="solid" 
+                                        icon="linkedin" iconColor="white" backgroundColor="#007FB4" 
+                                        iconSize="1" roundness="50%" size="40" 
+                                        url="https://www.linkedin.com/in/saagarparikh/"/>
+                  </div>
+                  <div className="about-social">
+                    <SocialMediaIconsReact borderColor="#3C719D" borderWidth="0" borderStyle="solid" 
+                                        icon="instagram" iconColor="white" backgroundColor="#3C719D" 
+                                        iconSize="1" roundness="50%" size="40" 
+                                        url="https://www.instagram.com/saagar.pdf/"/>
+                  </div>
+                </div>
+              </div>
+            </Col>
+
+            <Col md={4} className="about-member-info"> 
+              <img className="about-member-pic" src={ShivamPic}></img>
+              <div className="about-member-text">
+                <h3><b>Shivam Patel</b></h3>
+                <h4>University of Michigan</h4>
+                <h4>Business Administration, 2020</h4>
+                <div className="about-socials">
+                  <div className="about-social">
+                    <SocialMediaIconsReact borderColor="#007FB4" borderWidth="0" borderStyle="solid" 
+                                        icon="linkedin" iconColor="white" backgroundColor="#007FB4" 
+                                        iconSize="1" roundness="50%" size="40" 
+                                        url="https://www.linkedin.com/in/patelshivam845/"/>
+                  </div>
+                  <div className="about-social">
+                    <SocialMediaIconsReact borderColor="#3C719D" borderWidth="0" borderStyle="solid" 
+                                        icon="instagram" iconColor="white" backgroundColor="#3C719D" 
+                                        iconSize="1" roundness="50%" size="40" 
+                                        url="https://www.instagram.com/phivamsatel/"/>
+                  </div>
+                </div>
+              </div>
+            </Col>
+
+          </Row>
+        </div>
+
         <div className="about-info-gap">
           <h2><b>The Information Gap</b></h2>
           <h3>Cost of attendance. Prestige. Family preferences. Quality of academics.</h3>
@@ -27,10 +112,10 @@ class About extends Component{
             decisions on having graduated college.
           </p>
           <Row className="about-graphs">
-            <Col>
+            <Col className="about-graph">
               <img className="about-hs-graph" src={CollegeChart}></img>
             </Col>
-            <Col>
+            <Col className="about-graph">
               <img className="about-college-graph" src={HSChart}></img>
             </Col>
           </Row>

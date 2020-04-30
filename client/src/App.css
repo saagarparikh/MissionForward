@@ -58,7 +58,7 @@
   margin: 4% 0% 5% 0%;
   background-color: rgb(87, 133, 61);
   border-color: rgb(87, 133, 61);
-  width: 15%;
+  width: 10%;
   height: 7%;
 }
 
@@ -261,7 +261,7 @@
   border: 5% solid rgb(224, 224, 224);
   border-radius: 5px !important;
   right: 2%;
-  bottom: 30%;
+  bottom: 2%;
   background-color:#EFA885;
   display: flex;
   position: fixed;
@@ -545,11 +545,14 @@
 /* ------------------------- ABOUT PAGE ------------------------- */
 
 .about-page {
-  margin: 10.6% 10.6% 5% 10.6%;
+  /* margin: 10.6% 10.6% 5% 10.6%; */
+  margin: 10.6% 0% 5% 0%;
 }
 
 .about-intro {
-  padding-bottom: 33%;
+  padding-left: 10.6%;
+  padding-right: 10.6%;
+  padding-bottom: 18%;
 }
 
 .about-intro h1{
@@ -564,7 +567,89 @@
   font-weight: 100;
 }
 
+.about-team-button-div {
+  padding-top: 3%;
+  /* padding-top: 30vh; */
+  /* text-align: center; */
+}
+
+.btn.about-team-button {
+  font-family: Heebo;
+  font-size: 20px;
+  background-color: rgb(112, 172, 77);
+  border-color: rgb(112, 172, 77);
+}
+
+.btn.about-team-button:hover {
+  background-color: rgb(112, 172, 77);
+  border-color: rgb(112, 172, 77);
+}
+
+.about-team {
+  padding-top: 7%;
+}
+
+.about-team h1 {
+  font-size: 80px !important;
+  padding-left: 10.6%;
+  padding-right: 10.6%;
+  padding-bottom: 2%;
+}
+
+.about-member-info {
+  padding-bottom: 14%;
+}
+
+.about-member-info.col-md-4 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-member-info h4{
+  font-family: Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  color: #707070;
+  margin-bottom: 0 !important;
+}
+
+.about-member-info h3{
+  font-family: 'Helvetica Neue';
+  font-size: 20px;
+  color: black;
+  margin-bottom: 0 !important;
+}
+
+.row.about-member-pics{
+  flex: 1 0;
+  width: 100%;
+  padding: 0% 6.6% 0% 6.6%;
+}
+
+.about-member-pic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  padding-bottom: 4%;
+}
+
+.about-member-text {
+  margin-left: 14.5%;
+}
+
+.about-socials {
+  padding-top: 2%;
+}
+
+.about-social {
+  display: inline;
+  padding-right: 1.5%;
+}
+
 .about-info-gap {
+  padding-left: 10.6%;
+  padding-right: 10.6%;
   padding-bottom: 5%;
 }
 
@@ -596,10 +681,24 @@
 
 .about-hs-graph {
   height: 30vh;
+  padding-bottom: 5%;
 }
 
 .about-college-graph {
   height: 30vh;
+  padding-bottom: 5%;
+}
+
+.about-graph.col{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  flex-grow: 0 !important;
+}
+
+.about-insights {
+  padding-left: 10.6%;
+  padding-right: 10.6%;
 }
 
 .about-insights h3 {
